@@ -3,9 +3,10 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import json
 import time
+import re
 
 
-START_URL = "https://docs.python.org/3/tutorial/"
+START_URL = "https://www.gpsne.org/"
 MAX_PAGES = 10
 
 pages_to_visit = [START_URL]
@@ -14,9 +15,68 @@ collected_pages = []
 
 
 def is_same_domain(url):
-    """Only allow links from docs.python.org."""
-    return urlparse(url).netloc == "docs.python.org"
+    """Only allow links from gpsne.org."""
+    return urlparse(url).netloc in ["www.gpsne.org", "gpsne.org"]
 
+def extract_embedded_content(raw_html, current_url):
+    """
+    Extract HTML content that is stored inside JSON-like data
+    in the webpage source.
+
+    Some websites, such as the Gretna site, store the actual
+    page content as escaped HTML inside "html" fields.
+    """
+
+    embedded_text = []
+    embedded_links = []
+
+    # Find values that look like:
+    # "html":"<p>Some content...</p>"
+    matches = re.findall(
+        r'\\"html\\":\\"(.*?)\\"(?=,\\"|\})',
+        raw_html,
+        re.DOTALL
+    )
+
+    for escaped_html in matches:
+        try:
+            # Decode escaped characters such as \" and \n
+            decoded_html = bytes(
+                escaped_html,
+                "utf-8"
+            ).decode("unicode_escape")
+
+            inner_soup = BeautifulSoup(
+                decoded_html,
+                "html.parser"
+            )
+
+            # Extract the readable text
+            text = inner_soup.get_text(" ", strip=True)
+
+            if text:
+                embedded_text.append(text)
+
+            # Extract links from the embedded HTML
+            for link in inner_soup.find_all("a"):
+                href = link.get("href")
+
+                if not href:
+                    continue
+
+                link_text = link.get_text(" ", strip=True)
+
+                full_url = urljoin(current_url, href)
+
+                embedded_links.append({
+                    "text": link_text,
+                    "url": full_url
+                })
+
+        except Exception as error:
+            print(f"  Could not parse embedded content: {error}")
+
+    return embedded_text, embedded_links
 
 while pages_to_visit and len(visited_pages) < MAX_PAGES:
 
@@ -36,6 +96,11 @@ while pages_to_visit and len(visited_pages) < MAX_PAGES:
 
         soup = BeautifulSoup(response.text, "html.parser")
 
+        embedded_text, embedded_links = extract_embedded_content(
+            response.text,
+            current_url
+        )
+
         # Get the page title
         if soup.title:
             title = soup.title.get_text(strip=True)
@@ -45,11 +110,38 @@ while pages_to_visit and len(visited_pages) < MAX_PAGES:
         # Get page text
         text = soup.get_text(" ", strip=True)
 
+        # Add page-specific content found inside embedded HTML
+        if embedded_text:
+            text += " " + " ".join(embedded_text)
+
+        # Collect all links found on this page
+        page_links = []
+
+        for link in soup.find_all("a"):
+            href = link.get("href")
+
+            if not href:
+                continue
+
+            link_text = link.get_text(" ", strip=True)
+
+            # Convert relative links to full URLs
+            full_url = urljoin(current_url, href)
+
+            page_links.append({
+                "text": link_text,
+                "url": full_url
+            })
+
+        # Add links discovered inside embedded page content
+        page_links.extend(embedded_links)
+
         # Save what we found
         collected_pages.append({
             "title": title,
             "url": current_url,
-            "text": text
+            "text": text,
+            "links": page_links
         })
 
         visited_pages.add(current_url)
