@@ -28,19 +28,59 @@ The crawler works on other websites, but `mpsomaha.org` currently returns HTTP `
 
 Create and activate a virtual environment:
 
-```powershell
-python -m venv .venv
-.venv\Scripts\activate
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-Install dependencies:
+Install project dependencies for the backend:
 
-```powershell
-python -m pip install -r requirements.txt
+```bash
+python -m pip install -r backend/requirements.txt
 ```
 
-Run the crawler:
+Run the FastAPI app:
 
-```powershell
+```bash
+uvicorn backend.app.main:app --reload
+```
+
+Open the app in a browser:
+
+```text
+http://localhost:8000
+```
+
+The frontend is a static JavaScript/HTML/CSS app served from the FastAPI backend. The health endpoint is available at:
+
+```text
+http://localhost:8000/api/health
+```
+
+## Project Structure
+
+```text
+isqa3910/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   └── main.py
+│   └── requirements.txt
+├── frontend/
+│   ├── app.js
+│   ├── index.html
+│   └── styles.css
+├── crawler.py
+├── pages.json
+├── search.py
+├── README.md
+├── requirements.txt
+├── .gitignore
+└── .venv/
+```
+
+Legacy crawler command:
+
+```bash
 python crawler.py
 ```
