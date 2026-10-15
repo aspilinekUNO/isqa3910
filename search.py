@@ -1,185 +1,290 @@
-import json
+import csv
+import re
+from pathlib import Path
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-DATA_FILE = "pages.json"
-NUMBER_OF_PAGE_RESULTS = 3
-NUMBER_OF_LINK_RESULTS = 5
+# ---------------------------------------------------------
+# SETTINGS
+# ---------------------------------------------------------
+
+DATASET_FOLDER = Path("data/MPS_Parsed_Content_2026-10-01")
+MANIFEST_FILE = DATASET_FOLDER / "manifest.csv"
+
+NUMBER_OF_RESULTS = 5
 
 
-def load_pages():
-    """Load the information collected by crawler.py."""
-    with open(DATA_FILE, "r", encoding="utf-8") as file:
-        return json.load(file)
+# ---------------------------------------------------------
+# LOAD THE DATASET
+# ---------------------------------------------------------
 
-
-def build_page_index(pages):
+def load_documents():
     """
-    Create searchable text for every page.
+    Read manifest.csv and load the corresponding Markdown files.
 
-    The title is repeated so that words appearing in the page title
-    have more influence on the search results.
+    Each document keeps:
+    - title
+    - original source URL
+    - source partition
+    - source type
+    - local path
+    - document text
     """
+
     documents = []
 
-    for page in pages:
-        title = page.get("title", "")
-        text = page.get("text", "")
+    print("Loading MPS documents...")
 
-        searchable_text = f"{title} {title} {title} {text}"
-        documents.append(searchable_text)
+    with open(MANIFEST_FILE, "r", encoding="utf-8-sig") as file:
+        reader = csv.DictReader(file)
+
+        for row in reader:
+
+            relative_path = row["path"]
+            document_path = DATASET_FOLDER / relative_path
+
+            if not document_path.exists():
+                continue
+
+            try:
+                text = document_path.read_text(
+                    encoding="utf-8",
+                    errors="ignore"
+                )
+
+            except OSError:
+                continue
+
+            documents.append({
+                "title": row.get("title", ""),
+                "source_url": row.get("source_url", ""),
+                "source_partition": row.get(
+                    "source_partition",
+                    ""
+                ),
+                "source_type": row.get("source_type", ""),
+                "path": relative_path,
+                "text": text
+            })
+
+    print(f"Loaded {len(documents):,} documents.")
+
+    return documents
+
+
+# ---------------------------------------------------------
+# CLEAN TEXT
+# ---------------------------------------------------------
+
+def clean_text(text):
+    """
+    Perform some very basic cleanup before indexing.
+    """
+
+    # Remove Markdown/YAML punctuation that isn't useful
+    text = re.sub(r"[-#>*`]", " ", text)
+
+    # Replace repeated whitespace with a single space
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip()
+
+
+# ---------------------------------------------------------
+# BUILD SEARCH INDEX
+# ---------------------------------------------------------
+
+def build_search_index(documents):
+    """
+    Create one searchable string for each document.
+
+    The title is repeated so that title matches receive
+    more weight than ordinary body-text matches.
+    """
+
+    searchable_documents = []
+
+    print("Building search index...")
+
+    for document in documents:
+
+        title = clean_text(document["title"])
+        body = clean_text(document["text"])
+
+        searchable_text = (
+            f"{title} {title} {title} "
+            f"{document['source_partition']} "
+            f"{document['source_type']} "
+            f"{body}"
+        )
+
+        searchable_documents.append(searchable_text)
 
     vectorizer = TfidfVectorizer(
-        stop_words="english"
+        stop_words="english",
+        max_features=50000
     )
 
-    page_vectors = vectorizer.fit_transform(documents)
+    document_vectors = vectorizer.fit_transform(
+        searchable_documents
+    )
 
-    return vectorizer, page_vectors
+    print("Search index ready.")
+
+    return vectorizer, document_vectors
 
 
-def search_pages(query, pages, vectorizer, page_vectors):
-    """Rank crawled pages according to their similarity to the query."""
+# ---------------------------------------------------------
+# FIND A USEFUL EXCERPT
+# ---------------------------------------------------------
+
+def get_excerpt(text, query, length=350):
+    """
+    Try to show the part of the document containing
+    one of the user's search terms.
+    """
+
+    cleaned = clean_text(text)
+
+    query_words = [
+        word.lower()
+        for word in query.split()
+        if len(word) > 2
+    ]
+
+    lower_text = cleaned.lower()
+
+    position = -1
+
+    for word in query_words:
+        position = lower_text.find(word)
+
+        if position != -1:
+            break
+
+    # If no query word is found, use the beginning
+    if position == -1:
+        position = 0
+
+    start = max(0, position - 100)
+    end = min(len(cleaned), start + length)
+
+    excerpt = cleaned[start:end]
+
+    if start > 0:
+        excerpt = "..." + excerpt
+
+    if end < len(cleaned):
+        excerpt += "..."
+
+    return excerpt
+
+
+# ---------------------------------------------------------
+# SEARCH
+# ---------------------------------------------------------
+
+def search(
+    query,
+    documents,
+    vectorizer,
+    document_vectors
+):
+    """
+    Compare the user's query against every indexed document.
+    """
 
     query_vector = vectorizer.transform([query])
 
     scores = cosine_similarity(
         query_vector,
-        page_vectors
+        document_vectors
     )[0]
 
     ranked_indexes = scores.argsort()[::-1]
 
     results = []
 
-    for index in ranked_indexes[:NUMBER_OF_PAGE_RESULTS]:
+    for index in ranked_indexes[:NUMBER_OF_RESULTS]:
+
         results.append({
-            "page": pages[index],
+            "document": documents[index],
             "score": scores[index]
         })
 
     return results
 
 
-def search_links(query, page):
-    """
-    Search the links found on a particular page.
+# ---------------------------------------------------------
+# DISPLAY RESULTS
+# ---------------------------------------------------------
 
-    Link text is used because it often describes the actual
-    resource the user wants.
-    """
-
-    links = page.get("links", [])
-
-    # Remove links with no useful text
-    useful_links = []
-
-    for link in links:
-        link_text = link.get("text", "").strip()
-        url = link.get("url", "").strip()
-
-        if link_text and url:
-            useful_links.append(link)
-
-    if not useful_links:
-        return []
-
-    link_texts = [
-        link["text"]
-        for link in useful_links
-    ]
-
-    vectorizer = TfidfVectorizer(
-        stop_words="english"
-    )
-
-    try:
-        link_vectors = vectorizer.fit_transform(link_texts)
-        query_vector = vectorizer.transform([query])
-
-    except ValueError:
-        return []
-
-    scores = cosine_similarity(
-        query_vector,
-        link_vectors
-    )[0]
-
-    ranked_indexes = scores.argsort()[::-1]
-
-    results = []
-
-    for index in ranked_indexes[:NUMBER_OF_LINK_RESULTS]:
-
-        # Ignore links that have absolutely no similarity
-        if scores[index] <= 0:
-            continue
-
-        results.append({
-            "link": useful_links[index],
-            "score": scores[index]
-        })
-
-    return results
-
-
-def display_results(query, page_results):
+def display_results(query, results):
 
     print()
     print("=" * 70)
     print(f'Search results for: "{query}"')
     print("=" * 70)
 
-    for number, result in enumerate(page_results, start=1):
+    for number, result in enumerate(results, start=1):
 
-        page = result["page"]
-        page_score = result["score"]
+        document = result["document"]
+        score = result["score"]
 
         print()
-        print(f"{number}. {page['title']}")
-        print(f"   Page relevance: {page_score:.3f}")
-        print(f"   Page: {page['url']}")
+        print(f"{number}. {document['title']}")
+        print(f"   Relevance: {score:.3f}")
 
-        link_results = search_links(query, page)
+        print(
+            f"   Source group: "
+            f"{document['source_partition']}"
+        )
 
-        if link_results:
+        print(
+            f"   Document type: "
+            f"{document['source_type']}"
+        )
+
+        print()
+        print(
+            "   "
+            + get_excerpt(
+                document["text"],
+                query
+            )
+        )
+
+        if document["source_url"]:
             print()
-            print("   Possible resources:")
+            print(
+                f"   Source: "
+                f"{document['source_url']}"
+            )
 
-            for link_number, link_result in enumerate(
-                link_results,
-                start=1
-            ):
-                link = link_result["link"]
-                score = link_result["score"]
 
-                print(
-                    f"      {link_number}. "
-                    f"{link['text']}"
-                )
-
-                print(
-                    f"         Relevance: {score:.3f}"
-                )
-
-                print(
-                    f"         {link['url']}"
-                )
-
+# ---------------------------------------------------------
+# MAIN PROGRAM
+# ---------------------------------------------------------
 
 def main():
 
     print("=" * 70)
-    print("School Website Information Retrieval Prototype")
+    print("MPS Information Retrieval Prototype")
     print("=" * 70)
 
-    pages = load_pages()
+    documents = load_documents()
 
-    print(f"Loaded {len(pages)} crawled pages.")
+    if not documents:
+        print()
+        print("No documents were loaded.")
+        print("Check DATASET_FOLDER at the top of search.py.")
+        return
 
-    vectorizer, page_vectors = build_page_index(pages)
+    vectorizer, document_vectors = build_search_index(
+        documents
+    )
 
     while True:
 
@@ -191,22 +296,21 @@ def main():
         ).strip()
 
         if query.lower() == "quit":
-            print("Goodbye.")
             break
 
         if not query:
             continue
 
-        page_results = search_pages(
+        results = search(
             query,
-            pages,
+            documents,
             vectorizer,
-            page_vectors
+            document_vectors
         )
 
         display_results(
             query,
-            page_results
+            results
         )
 
 
