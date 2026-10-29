@@ -3,21 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Starter</title>
+    <title>Information Assistant</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
-    <main class="app-shell">
-      <section class="card">
-        <p class="eyebrow">Project Status</p>
-        <h1>Starter App Ready</h1>
-        <p class="description">
-          This frontend is connected to a FastAPI backend and is ready for your next feature.
-        </p>
-        <button id="health-button" type="button">Check backend</button>
-        <pre id="status-box">Waiting for backend...</pre>
-      </section>
-    </main>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo-placeholder" aria-label="Logo placeholder">
+            <img src="/static/assets/logo.jpg" alt="Logo" class="logo-image" />
+          </div>
+          <div class="brand-text">Information Assistant</div>
+        </div>
+      </header>
+
+      <div class="toolbar" aria-label="Search controls">
+        <label class="control-group">
+          <span class="topic-label">Topic</span>
+          <details class="dropdown topic-dropdown" aria-label="Topic filter">
+            <summary id="topic-selected">Students</summary>
+            <div class="dropdown-menu" role="menu">
+              <button type="button" class="menu-item active" data-topic="Students">Students</button>
+              <button type="button" class="menu-item" data-topic="Academics">Academics</button>
+              <button type="button" class="menu-item" data-topic="Activities &amp; Athletics">Activities &amp; Athletics</button>
+              <button type="button" class="menu-item" data-topic="Attendance">Attendance</button>
+              <button type="button" class="menu-item" data-topic="Enrollment">Enrollment</button>
+              <button type="button" class="menu-item" data-topic="Health &amp; Wellness">Health &amp; Wellness</button>
+              <button type="button" class="menu-item" data-topic="Families">Families</button>
+              <button type="button" class="menu-item" data-topic="Staff">Staff</button>
+              <button type="button" class="menu-item" data-topic="Departments">Departments</button>
+              <button type="button" class="menu-item" data-topic="Policies &amp; Forms">Policies &amp; Forms</button>
+              <button type="button" class="menu-item" data-topic="District Information">District Information</button>
+            </div>
+          </details>
+        </label>
+
+        <details class="dropdown school-dropdown" aria-label="School filter">
+          <summary id="school-selected">Andersen Middle School</summary>
+          <div class="dropdown-menu" role="menu">
+            <button type="button" class="menu-item active" data-school="Andersen Middle School">Andersen Middle School</button>
+            <button type="button" class="menu-item" data-school="Beadle Middle School">Beadle Middle School</button>
+            <button type="button" class="menu-item" data-school="Central Middle School">Central Middle School</button>
+            <button type="button" class="menu-item" data-school="Peter Kiewit Middle School">Peter Kiewit Middle School</button>
+            <button type="button" class="menu-item" data-school="Millard North Middle School">Millard North Middle School</button>
+            <button type="button" class="menu-item" data-school="Russell Middle School">Russell Middle School</button>
+            <button type="button" class="menu-item" data-school="Millard North High School[7]">Millard North High School[7]</button>
+            <button type="button" class="menu-item" data-school="Millard South High School[8]">Millard South High School[8]</button>
+            <button type="button" class="menu-item" data-school="Millard West High School[9]">Millard West High School[9]</button>
+            <button type="button" class="menu-item" data-school="Keith Lutz Horizon High School">Keith Lutz Horizon High School</button>
+            <button type="button" class="menu-item" data-school="Ackerman Elementary School">Ackerman Elementary School</button>
+            <button type="button" class="menu-item" data-school="Bess Streeter Aldrich Elementary School">Bess Streeter Aldrich Elementary School</button>
+            <button type="button" class="menu-item" data-school="Black Elk Elementary School">Black Elk Elementary School</button>
+            <button type="button" class="menu-item" data-school="Bryan Elementary School">Bryan Elementary School</button>
+            <button type="button" class="menu-item" data-school="Cather Elementary School">Cather Elementary School</button>
+            <button type="button" class="menu-item" data-school="Cody Elementary School">Cody Elementary School</button>
+            <button type="button" class="menu-item" data-school="Cottonwood Elementary School">Cottonwood Elementary School</button>
+            <button type="button" class="menu-item" data-school="Disney Elementary School">Disney Elementary School</button>
+            <button type="button" class="menu-item" data-school="Ezra Millard Elementary School">Ezra Millard Elementary School</button>
+            <button type="button" class="menu-item" data-school="Grace Abbott Elementary School">Grace Abbott Elementary School</button>
+            <button type="button" class="menu-item" data-school="Harvey Oaks Elementary School">Harvey Oaks Elementary School</button>
+            <button type="button" class="menu-item" data-school="Hitchcock Elementary School">Hitchcock Elementary School</button>
+            <button type="button" class="menu-item" data-school="Holling Heights Elementary School">Holling Heights Elementary School</button>
+            <button type="button" class="menu-item" data-school="Montclair Elementary School">Montclair Elementary School</button>
+            <button type="button" class="menu-item" data-school="Morton Elementary School">Morton Elementary School</button>
+            <button type="button" class="menu-item" data-school="Neihardt Elementary School">Neihardt Elementary School</button>
+            <button type="button" class="menu-item" data-school="Norris Elementary School">Norris Elementary School</button>
+            <button type="button" class="menu-item" data-school="Reagan Elementary School">Reagan Elementary School</button>
+            <button type="button" class="menu-item" data-school="Reeder Elementary School">Reeder Elementary School</button>
+            <button type="button" class="menu-item" data-school="Rockwell Elementary School">Rockwell Elementary School</button>
+            <button type="button" class="menu-item" data-school="Rohwer Elementary School">Rohwer Elementary School</button>
+            <button type="button" class="menu-item" data-school="Sandoz Elementary School">Sandoz Elementary School</button>
+            <button type="button" class="menu-item" data-school="Upchurch Elementary School">Upchurch Elementary School</button>
+            <button type="button" class="menu-item" data-school="Wheeler Elementary School">Wheeler Elementary School</button>
+            <button type="button" class="menu-item" data-school="Willowdale Elementary School">Willowdale Elementary School</button>
+          </div>
+        </details>
+
+        <button type="button" class="secondary-action" id="reset-filters">Reset filters</button>
+      </div>
+
+      <main class="workspace">
+        <aside class="sidebar">
+          <div class="sidebar-header">Ask about</div>
+          <div class="sidebar-copy">Your selected topic and school will guide the answer.</div>
+        </aside>
+
+        <section class="chat-panel" aria-label="Assistant chat">
+          <div id="chat-window" class="chat-window" aria-live="polite"></div>
+
+          <form class="composer" id="question-form">
+            <input type="text" placeholder="Ask a question..." aria-label="Ask a question" />
+            <button type="submit" aria-label="Send question">➤</button>
+          </form>
+        </section>
+      </main>
+    </div>
 
     <script src="/static/app.js"></script>
   </body>
