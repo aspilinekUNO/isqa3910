@@ -5,6 +5,8 @@ from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from mps_data import load_resources
+
 
 # ---------------------------------------------------------
 # SETTINGS
@@ -263,6 +265,69 @@ def display_results(query, results):
                 f"{document['source_url']}"
             )
 
+def search_resources(query, number_of_results=3):
+    """
+    Search the curated MPS information tree.
+
+    Returns the resources that best match the user's question.
+    """
+
+    resources = load_resources()
+
+    searchable_resources = []
+
+    for resource in resources:
+        searchable_text = " ".join([
+            resource.get("resource_name", ""),
+            resource.get("resource_name", ""),
+            resource.get("resource_name", ""),
+            resource.get("category", ""),
+            resource.get("subcategory", ""),
+            resource.get("description", ""),
+            resource.get("keywords", ""),
+            resource.get("staff_intent", ""),
+            resource.get("resource_type", "")
+        ])
+
+        searchable_resources.append(searchable_text)
+
+    vectorizer = TfidfVectorizer(
+        stop_words="english"
+    )
+
+    resource_vectors = vectorizer.fit_transform(
+        searchable_resources
+    )
+
+    query_vector = vectorizer.transform([query])
+
+    scores = cosine_similarity(
+        query_vector,
+        resource_vectors
+    )[0]
+
+    ranked_indexes = scores.argsort()[::-1]
+
+    results = []
+
+    for index in ranked_indexes[:number_of_results]:
+
+        resource = resources[index]
+
+        results.append({
+            "resource_id": resource["resource_id"],
+            "resource_name": resource["resource_name"],
+            "category": resource["category"],
+            "subcategory": resource["subcategory"],
+            "resource_type": resource["resource_type"],
+            "description": resource["description"],
+            "staff_intent": resource["staff_intent"],
+            "source_url": resource["source_url"],
+            "score": float(scores[index])
+        })
+
+    return results
+
 
 # ---------------------------------------------------------
 # MAIN PROGRAM
@@ -271,20 +336,8 @@ def display_results(query, results):
 def main():
 
     print("=" * 70)
-    print("MPS Information Retrieval Prototype")
+    print("MPS Information Tree Search")
     print("=" * 70)
-
-    documents = load_documents()
-
-    if not documents:
-        print()
-        print("No documents were loaded.")
-        print("Check DATASET_FOLDER at the top of search.py.")
-        return
-
-    vectorizer, document_vectors = build_search_index(
-        documents
-    )
 
     while True:
 
@@ -301,17 +354,44 @@ def main():
         if not query:
             continue
 
-        results = search(
-            query,
-            documents,
-            vectorizer,
-            document_vectors
-        )
+        results = search_resources(query)
 
-        display_results(
-            query,
-            results
-        )
+        print()
+        print(f'Results for: "{query}"')
+        print("-" * 70)
+
+        for number, result in enumerate(results, start=1):
+
+            print()
+            print(
+                f"{number}. "
+                f"{result['resource_name']}"
+            )
+
+            print(
+                f"   Category: "
+                f"{result['category']} > "
+                f"{result['subcategory']}"
+            )
+
+            print(
+                f"   Type: "
+                f"{result['resource_type']}"
+            )
+
+            print(
+                f"   Relevance: "
+                f"{result['score']:.3f}"
+            )
+
+            print(
+                f"   {result['description']}"
+            )
+
+            print(
+                f"   Source: "
+                f"{result['source_url']}"
+            )
 
 
 if __name__ == "__main__":
