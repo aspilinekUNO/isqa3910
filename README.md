@@ -1,42 +1,86 @@
-# MPS Chatbot / Information Retrieval Prototype
+# MPS Information Retrieval Prototype
 
-Student project for developing an information retrieval system for Millard Public Schools. The eventual goal is to help MPS staff quickly find information and resources across MPS websites.
+Student project developing an information retrieval system for Millard Public Schools. The goal is to help MPS staff find relevant district resources through a simple question-based interface.
 
 ## Current Progress
 
-- Created an initial Python web crawler.
-- Successfully tested downloading, parsing, and extracting links from `example.com`.
-- Expanded the crawler to follow links and save collected page information to `pages.json`.
-- Tested the crawler using the Python documentation website.
-- Discovered that direct requests to `mpsomaha.org` return a `403` response due to the site's anti-bot protection.
-- Added `.gitignore` to exclude the virtual environment and other unnecessary files.
-- Added `requirements.txt` so dependencies can be recreated.
+- Developed and tested an initial Python web crawler.
+- Confirmed that the live MPS website blocks standard automated requests with an HTTP `403` response.
+- Obtained a local parsed snapshot of MPS website content for development and testing.
+- Developed a TF-IDF retrieval prototype capable of searching the parsed MPS document collection.
+- Developed an initial curated MPS information tree containing resource categories, subcategories, descriptions, keywords, staff intents, and source URLs.
+- Implemented information-tree search using natural-language user queries.
+- Created a FastAPI backend and static JavaScript/HTML/CSS frontend.
+- Connected the frontend to the retrieval backend through `/api/search`.
+- Search results display ranked MPS resources with descriptions and links to the original sources.
 
-## Next Steps
+## Current Architecture
 
-1. Build a simple retrieval/search system using the collected page data.
-2. Test retrieval using the Python documentation dataset.
-3. Determine an approved method for accessing MPS website content.
-4. Eventually test retrieval against real MPS resources.
-5. Add AI-generated answers only after basic retrieval is working.
+```text
+User Question
+     ↓
+Web Interface
+     ↓
+FastAPI /api/search
+     ↓
+Information Tree Search
+     ↓
+Curated MPS Resources
+     ↓
+Ranked Results
+     ↓
+Original MPS Resource Links
+```
 
-## Important Finding
+The project also contains a larger parsed MPS document collection that can be searched separately. Future work will investigate combining the curated information tree with full-document retrieval.
 
-The crawler works on other websites, but `mpsomaha.org` currently returns HTTP `403` to normal Python requests. Ask the MPS sponsor/IT team whether there is an approved way to access website content programmatically, such as a sitemap, CMS/API access, or another data source.
+## Data Sources
+
+### Curated Information Tree
+
+`mps_resources.json` contains curated MPS resources with fields such as:
+
+- Category and subcategory
+- Resource name and type
+- Description
+- Search keywords
+- Staff intent
+- Original source URL
+
+`mps_data.py` provides helper functions for reading and using this resource data.
+
+### Parsed MPS Content
+
+A local parsed-content export contains MPS webpages, Google Drive content, PDFs, calendars, Office documents, and other resources.
+
+The dataset is used locally and is excluded from Git.
+
+### Legacy Web Crawler
+
+`crawler.py` was developed during early prototyping to investigate website ingestion. It successfully crawls websites that permit normal automated requests. Direct requests to the live MPS website currently return HTTP `403`, so development has shifted to the provided local MPS content snapshot.
 
 ## Setup
 
-Create and activate a virtual environment:
+Create a virtual environment.
+
+### Windows
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### macOS / Linux
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Install project dependencies for the backend:
+Install project dependencies:
 
 ```bash
-python -m pip install -r backend/requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 Run the FastAPI app:
@@ -45,13 +89,19 @@ Run the FastAPI app:
 uvicorn backend.app.main:app --reload
 ```
 
-Open the app in a browser:
+Open the application:
 
 ```text
 http://localhost:8000
 ```
 
-The frontend is a static JavaScript/HTML/CSS app served from the FastAPI backend. The health endpoint is available at:
+FastAPI API documentation is available at:
+
+```text
+http://localhost:8000/docs
+```
+
+The backend health endpoint is available at:
 
 ```text
 http://localhost:8000/api/health
@@ -65,22 +115,41 @@ isqa3910/
 │   ├── app/
 │   │   ├── __init__.py
 │   │   └── main.py
-│   └── requirements.txt
 ├── frontend/
+│   ├── assets/
 │   ├── app.js
 │   ├── index.html
 │   └── styles.css
 ├── crawler.py
-├── pages.json
+├── mps_data.py
+├── mps_resources.json
+├── mps_pages.json
 ├── search.py
 ├── README.md
 ├── requirements.txt
-├── .gitignore
-└── .venv/
+└── .gitignore
 ```
 
-Legacy crawler command:
+## Search
 
-```bash
-python crawler.py
-```
+The current application searches the curated information tree and returns the MPS resources that most closely match the user's question.
+
+Example queries include:
+
+- `Where can I find employee benefits?`
+- `I need help with my computer`
+- `I need the sports physical form`
+- `Where is the administrative calendar?`
+
+The retrieval system currently uses TF-IDF and cosine similarity to rank resources. Generative AI is not currently required for resource retrieval.
+
+## Planned Work
+
+- Expand the curated information tree with additional MPS resources.
+- Test retrieval against realistic staff questions.
+- Improve handling of low-confidence or ambiguous searches.
+- Integrate information-tree retrieval with the larger parsed MPS document collection.
+- Improve retrieval from long documents through section/chunk-based indexing.
+- Determine how source authority and resource scope should affect ranking.
+- Continue accessibility and usability testing.
+- Refine the interface and prepare project documentation for MPS handoff.
