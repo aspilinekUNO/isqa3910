@@ -476,3 +476,44 @@ button {
     max-width: 100%;
   }
 }
+
+.resource-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.resource-card {
+  padding: 18px;
+  border: 1px solid #d9dee7;
+  border-radius: 12px;
+  background: #f8f9fb;
+}
+
+.resource-title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.resource-category {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #5f6875;
+}
+
+.resource-description {
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+.resource-link {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}

@@ -167,9 +167,127 @@ document.addEventListener('DOMContentLoaded', () => {
     chatWindow.scrollTop = chatWindow.scrollHeight;
   };
 
-  const addAssistantReply = (question) => {
-    const reply = buildAssistantReply(question);
-    renderMessage('assistant', reply.text, reply.table);
+  const renderResourceResults = (results) => {
+    if (!chatWindow) {
+      return;
+    }
+
+    const messageRow = document.createElement('div');
+    messageRow.className = 'message-row assistant-row';
+
+    // Assistant avatar
+    const avatar = document.createElement('div');
+    avatar.className = 'assistant-avatar';
+    avatar.setAttribute('aria-label', 'Assistant message');
+
+    const logo = document.createElement('img');
+    logo.src = '/static/assets/logo.jpg';
+    logo.alt = 'Assistant logo';
+    logo.className = 'assistant-avatar-image';
+
+    avatar.appendChild(logo);
+    messageRow.appendChild(avatar);
+
+    // Main response container
+    const contentWrap = document.createElement('div');
+    contentWrap.className = 'assistant-content';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'assistant-card';
+
+    const intro = document.createElement('p');
+    intro.textContent = 'I found these resources that may help:';
+
+    bubble.appendChild(intro);
+
+    // Container for all resource cards
+    const resultsContainer = document.createElement('div');
+    resultsContainer.className = 'resource-results';
+
+    results.forEach((result) => {
+      const card = document.createElement('div');
+      card.className = 'resource-card';
+
+      const title = document.createElement('h3');
+      title.className = 'resource-title';
+      title.textContent = result.resource_name;
+
+      const category = document.createElement('div');
+      category.className = 'resource-category';
+      category.textContent =
+        `${result.category} › ${result.subcategory}`;
+
+      const description = document.createElement('p');
+      description.className = 'resource-description';
+      description.textContent = result.description;
+
+      const link = document.createElement('a');
+      link.className = 'resource-link';
+      link.href = result.source_url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Open Resource ↗';
+
+      card.appendChild(title);
+      card.appendChild(category);
+      card.appendChild(description);
+      card.appendChild(link);
+
+      resultsContainer.appendChild(card);
+    });
+
+    bubble.appendChild(resultsContainer);
+    contentWrap.appendChild(bubble);
+
+    const time = document.createElement('div');
+    time.className = 'timestamp';
+    time.textContent = createTimeStamp();
+
+    contentWrap.appendChild(time);
+    messageRow.appendChild(contentWrap);
+
+    chatWindow.appendChild(messageRow);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  };
+
+  const addAssistantReply = async (question) => {
+    try {
+      const response = await fetch('/api/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          query: question
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Search request failed');
+      }
+
+      const data = await response.json();
+
+      if (!data.results || data.results.length === 0) {
+        renderMessage(
+          'assistant',
+          'I could not find a matching MPS resource.',
+          null
+        );
+        return;
+      }
+
+      renderResourceResults(data.results);
+
+    } catch (error) {
+      console.error(error);
+
+      renderMessage(
+        'assistant',
+        'I was unable to search MPS resources.',
+        null
+      );
+    }
   };
 
   const seedWelcomeMessage = () => {
@@ -249,9 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
       questionInput.value = '';
       questionInput.placeholder = 'Ask a question...';
 
-      window.setTimeout(() => {
-        addAssistantReply(value);
-      }, 250);
+      addAssistantReply(value);
     });
   }
 

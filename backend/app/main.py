@@ -5,6 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+from pydantic import BaseModel
+from search import search_resources
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
 
@@ -14,6 +17,9 @@ app = FastAPI(
     description="Starter FastAPI backend for a Python + JavaScript web app.",
 )
 
+class SearchRequest(BaseModel):
+    query: str
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -22,6 +28,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.post("/api/search")
+def search_mps(request: SearchRequest):
+    results = search_resources(
+        request.query,
+        number_of_results=3
+    )
+
+    return {
+        "query": request.query,
+        "results": results
+    }
 
 @app.get("/api/health")
 def health_check() -> dict[str, str]:
