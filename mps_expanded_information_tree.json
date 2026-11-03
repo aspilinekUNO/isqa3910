@@ -1,0 +1,1372 @@
+[
+  {
+    "label": "Staff & Employee Services",
+    "children": [
+      {
+        "label": "Staff Portals & Accounts",
+        "topics": [
+          {
+            "label": "Staff Links",
+            "resources": [
+              {
+                "id": "STAFF-001",
+                "title": "Staff Links",
+                "description": "Alphabetical staff link hub containing employee systems, instructional resources, benefits links, and support links.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "staff links, employee, tools, portal, resources",
+                "staff_intent": "Open a staff-facing system or resource.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Employee Access Center",
+            "resources": [
+              {
+                "id": "HR-003",
+                "title": "Employee Access Center",
+                "description": "Staff Links describes Employee Access Center as employee access to personal information.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "employee access center, personal information, employee portal, EAC",
+                "staff_intent": "Access employee personal information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Employee self-service",
+            "resources": [
+              {
+                "id": "STAFF-001",
+                "title": "Staff Links",
+                "description": "Alphabetical staff link hub containing employee systems, instructional resources, benefits links, and support links.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "staff links, employee, tools, portal, resources",
+                "staff_intent": "Open a staff-facing system or resource.",
+                "source": "uploaded_resource_dataset"
+              },
+              {
+                "id": "HR-003",
+                "title": "Employee Access Center",
+                "description": "Staff Links describes Employee Access Center as employee access to personal information.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "employee access center, personal information, employee portal, EAC",
+                "staff_intent": "Access employee personal information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Single sign-on and ClassLink",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Account/password assistance",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Employee directories",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Human Resources",
+        "topics": [
+          {
+            "label": "Benefits and insurance",
+            "resources": [
+              {
+                "id": "HR-001",
+                "title": "Employee Benefits",
+                "description": "Employee benefits page linking to benefits resources, premiums, benefits guide, and related topics.",
+                "url": "https://www.mpsomaha.org/departments/human-resources/benefits",
+                "keywords": "benefits, insurance, health plan, employee benefits, premiums",
+                "staff_intent": "Find employee benefits information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Benefits enrollment",
+            "resources": [
+              {
+                "id": "HR-001",
+                "title": "Employee Benefits",
+                "description": "Employee benefits page linking to benefits resources, premiums, benefits guide, and related topics.",
+                "url": "https://www.mpsomaha.org/departments/human-resources/benefits",
+                "keywords": "benefits, insurance, health plan, employee benefits, premiums",
+                "staff_intent": "Find employee benefits information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Payroll and pay statements",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Leave and absences",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Employment verification",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Hiring and onboarding",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Contracts and bargaining",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Retirement",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "HR forms and documents",
+            "resources": [
+              {
+                "id": "HR-002",
+                "title": "HR Resource Browser",
+                "description": "Searchable Human Resources library with benefits, compensation, documents, web portals, and links; supports keyword/category/employee-type filtering.",
+                "url": "https://www.mpsomaha.org/human-resources/resource-browser",
+                "keywords": "HR, human resources, benefits, compensation, retirement, forms, employee type",
+                "staff_intent": "Search HR documents and employee resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "HR contacts",
+            "resources": [
+              {
+                "id": "HR-002",
+                "title": "HR Resource Browser",
+                "description": "Searchable Human Resources library with benefits, compensation, documents, web portals, and links; supports keyword/category/employee-type filtering.",
+                "url": "https://www.mpsomaha.org/human-resources/resource-browser",
+                "keywords": "HR, human resources, benefits, compensation, retirement, forms, employee type",
+                "staff_intent": "Search HR documents and employee resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          }
+        ]
+      },
+      {
+        "label": "Professional Learning",
+        "topics": [
+          {
+            "label": "Staff development",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Training calendar",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Required training",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Licensure and certification",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Staff evaluation",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Teaching & Learning",
+    "children": [
+      {
+        "label": "Curriculum & Instruction",
+        "topics": [
+          {
+            "label": "Elementary curriculum",
+            "resources": [
+              {
+                "id": "CURR-001",
+                "title": "Elementary Math Resource Site",
+                "description": "Staff Links identifies an elementary math resource site for teachers using the math curriculum.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "elementary math, math curriculum, teacher resources, instructional",
+                "staff_intent": "Find elementary math curriculum resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Middle school curriculum",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "High school curriculum",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Math resources",
+            "resources": [
+              {
+                "id": "CURR-001",
+                "title": "Elementary Math Resource Site",
+                "description": "Staff Links identifies an elementary math resource site for teachers using the math curriculum.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "elementary math, math curriculum, teacher resources, instructional",
+                "staff_intent": "Find elementary math curriculum resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Science resources",
+            "resources": [
+              {
+                "id": "CURR-002",
+                "title": "Holt McDougal Online",
+                "description": "Staff Links identifies Holt McDougal Online for Science, Social Studies, and World Language curriculum access.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "Holt McDougal, science, social studies, world language, curriculum",
+                "staff_intent": "Access supported online curriculum materials.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Language arts",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Social studies",
+            "resources": [
+              {
+                "id": "CURR-002",
+                "title": "Holt McDougal Online",
+                "description": "Staff Links identifies Holt McDougal Online for Science, Social Studies, and World Language curriculum access.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "Holt McDougal, science, social studies, world language, curriculum",
+                "staff_intent": "Access supported online curriculum materials.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "World languages",
+            "resources": [
+              {
+                "id": "CURR-002",
+                "title": "Holt McDougal Online",
+                "description": "Staff Links identifies Holt McDougal Online for Science, Social Studies, and World Language curriculum access.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "Holt McDougal, science, social studies, world language, curriculum",
+                "staff_intent": "Access supported online curriculum materials.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Fine arts",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Instructional materials",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Digital textbooks",
+            "resources": [
+              {
+                "id": "CURR-002",
+                "title": "Holt McDougal Online",
+                "description": "Staff Links identifies Holt McDougal Online for Science, Social Studies, and World Language curriculum access.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "Holt McDougal, science, social studies, world language, curriculum",
+                "staff_intent": "Access supported online curriculum materials.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          }
+        ]
+      },
+      {
+        "label": "Assessment & Data",
+        "topics": [
+          {
+            "label": "District assessments",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "State assessments",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Testing calendars",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Assessment resources",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Data reporting",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Research requests",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Classroom Resources",
+        "topics": [
+          {
+            "label": "Lesson planning",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Learning platforms",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Library services",
+            "resources": [
+              {
+                "id": "LIB-001",
+                "title": "Library Services",
+                "description": "Staff Links points to information about the Library Services Department and services provided.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "library, library services, research, resources",
+                "staff_intent": "Find Library Services information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Instructional technology",
+            "resources": [
+              {
+                "id": "TECH-002",
+                "title": "Technology Department",
+                "description": "Technology department page with technology contacts and access to MPS Tech Resources.",
+                "url": "https://www.mpsomaha.org/departments/technology",
+                "keywords": "technology, tech resources, tutorials, digital applications, contacts",
+                "staff_intent": "Find district technology resources or contacts.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Specialized programs",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Technology & Digital Services",
+    "children": [
+      {
+        "label": "Help & Support",
+        "topics": [
+          {
+            "label": "Technology Help Desk",
+            "resources": [
+              {
+                "id": "TECH-001",
+                "title": "Help Desk - Staff Technology",
+                "description": "Staff technology support entry point; district staff are directed to enter a Helpdesk ticket for technical support.",
+                "url": "https://www.mpsomaha.org/departments/technology",
+                "keywords": "help desk, helpdesk, tech support, technology, IT, ticket, computer",
+                "staff_intent": "Get technical help or submit a support request.",
+                "source": "uploaded_resource_dataset"
+              },
+              {
+                "id": "TECH-002",
+                "title": "Technology Department",
+                "description": "Technology department page with technology contacts and access to MPS Tech Resources.",
+                "url": "https://www.mpsomaha.org/departments/technology",
+                "keywords": "technology, tech resources, tutorials, digital applications, contacts",
+                "staff_intent": "Find district technology resources or contacts.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Submit a support ticket",
+            "resources": [
+              {
+                "id": "TECH-001",
+                "title": "Help Desk - Staff Technology",
+                "description": "Staff technology support entry point; district staff are directed to enter a Helpdesk ticket for technical support.",
+                "url": "https://www.mpsomaha.org/departments/technology",
+                "keywords": "help desk, helpdesk, tech support, technology, IT, ticket, computer",
+                "staff_intent": "Get technical help or submit a support request.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Device troubleshooting",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Account access",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Network and Wi-Fi",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Printing and copiers",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Systems & Security",
+        "topics": [
+          {
+            "label": "Staff systems",
+            "resources": [
+              {
+                "id": "STAFF-001",
+                "title": "Staff Links",
+                "description": "Alphabetical staff link hub containing employee systems, instructional resources, benefits links, and support links.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "staff links, employee, tools, portal, resources",
+                "staff_intent": "Open a staff-facing system or resource.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Google Workspace",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Microsoft 365",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "ClassLink",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Technology policies",
+            "resources": [
+              {
+                "id": "POL-002",
+                "title": "7000 Technology Policies",
+                "description": "Technology policy collection including acceptable use, account lifecycle, web/social media, cybersecurity, and records retention.",
+                "url": "https://www.mpsomaha.org/board/policies/7000-technology",
+                "keywords": "technology policy, acceptable use, cybersecurity, password, MFA, social media, records",
+                "staff_intent": "Find a technology-related district policy.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Cybersecurity guidance",
+            "resources": [
+              {
+                "id": "POL-002",
+                "title": "7000 Technology Policies",
+                "description": "Technology policy collection including acceptable use, account lifecycle, web/social media, cybersecurity, and records retention.",
+                "url": "https://www.mpsomaha.org/board/policies/7000-technology",
+                "keywords": "technology policy, acceptable use, cybersecurity, password, MFA, social media, records",
+                "staff_intent": "Find a technology-related district policy.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Data privacy",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Students & Student Services",
+    "children": [
+      {
+        "label": "Enrollment & Records",
+        "topics": [
+          {
+            "label": "New student enrollment",
+            "resources": [
+              {
+                "id": "STU-001",
+                "title": "Enrollment Portal",
+                "description": "Enrollment portal includes required documents, new-family enrollment, annual updates, transfers, FAQs, and enrollment contact information.",
+                "url": "https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal",
+                "keywords": "enrollment, enroll, new student, annual update, transfer, ParentVUE, registration",
+                "staff_intent": "Help a family with enrollment or locate enrollment procedures.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Annual updates",
+            "resources": [
+              {
+                "id": "STU-001",
+                "title": "Enrollment Portal",
+                "description": "Enrollment portal includes required documents, new-family enrollment, annual updates, transfers, FAQs, and enrollment contact information.",
+                "url": "https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal",
+                "keywords": "enrollment, enroll, new student, annual update, transfer, ParentVUE, registration",
+                "staff_intent": "Help a family with enrollment or locate enrollment procedures.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "School transfers",
+            "resources": [
+              {
+                "id": "STU-002",
+                "title": "Within-District Transfer",
+                "description": "Enrollment portal provides the within-district transfer application information and form.",
+                "url": "https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal",
+                "keywords": "transfer, within district, school transfer, application",
+                "staff_intent": "Locate the within-district transfer process or form.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "School assignment",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Student records",
+            "resources": [
+              {
+                "id": "STU-001",
+                "title": "Enrollment Portal",
+                "description": "Enrollment portal includes required documents, new-family enrollment, annual updates, transfers, FAQs, and enrollment contact information.",
+                "url": "https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal",
+                "keywords": "enrollment, enroll, new student, annual update, transfer, ParentVUE, registration",
+                "staff_intent": "Help a family with enrollment or locate enrollment procedures.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Student information systems",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Attendance & Conduct",
+        "topics": [
+          {
+            "label": "Attendance reporting",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Attendance procedures",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Student conduct",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Discipline policies",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Student Support",
+        "topics": [
+          {
+            "label": "Special education",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "504 accommodations",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "English learners",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Counseling",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Mental health",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Student health",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Immunizations",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Safety and incident reporting",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Activities & Athletics",
+    "children": [
+      {
+        "label": "Sports & Participation",
+        "topics": [
+          {
+            "label": "Athletic enrollment",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Pre-participation clearance",
+            "resources": [
+              {
+                "id": "ATH-001",
+                "title": "Athletic Pre-Participation Clearance Form 2026-27",
+                "description": "District Activities/Athletics page lists the current athletic pre-participation clearance form (sports physical).",
+                "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+                "keywords": "athletics, sports, physical, clearance, participation, form, athlete",
+                "staff_intent": "Locate required athletic participation paperwork.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Sports physical forms",
+            "resources": [
+              {
+                "id": "ATH-001",
+                "title": "Athletic Pre-Participation Clearance Form 2026-27",
+                "description": "District Activities/Athletics page lists the current athletic pre-participation clearance form (sports physical).",
+                "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+                "keywords": "athletics, sports, physical, clearance, participation, form, athlete",
+                "staff_intent": "Locate required athletic participation paperwork.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Eligibility",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Team schedules",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Activity forms",
+            "resources": [
+              {
+                "id": "GEN-001",
+                "title": "MPS Resource Browser",
+                "description": "Searchable MPS resource finder for items such as handbooks and activities/athletic forms.",
+                "url": "https://www.mpsomaha.org/resource-browser",
+                "keywords": "resource, form, document, handbook, athletics, activities, find",
+                "staff_intent": "Find an official MPS resource or form.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          }
+        ]
+      },
+      {
+        "label": "Activity Operations",
+        "topics": [
+          {
+            "label": "Activity transportation",
+            "resources": [
+              {
+                "id": "ATH-002",
+                "title": "Middle School Transportation Forms",
+                "description": "Activities/Athletics page provides middle-school transportation guidelines and an all-transportation form.",
+                "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+                "keywords": "middle school, athletics, transportation, bus, form, guidelines",
+                "staff_intent": "Find middle-school activity/athletic transportation paperwork.",
+                "source": "uploaded_resource_dataset"
+              },
+              {
+                "id": "ATH-003",
+                "title": "High School Transportation Forms",
+                "description": "Activities/Athletics page provides high-school transportation guidelines and an all-transportation form.",
+                "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+                "keywords": "high school, athletics, transportation, bus, form, guidelines",
+                "staff_intent": "Find high-school activity/athletic transportation paperwork.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Facility use",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Field trips",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Fine arts activities",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Clubs and organizations",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "School Operations",
+    "children": [
+      {
+        "label": "Buildings & Facilities",
+        "topics": [
+          {
+            "label": "Maintenance requests",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Custodial resources",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Facility reservations",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Building safety",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Emergency procedures",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Transportation",
+        "topics": [
+          {
+            "label": "Bus services",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Transportation forms",
+            "resources": [
+              {
+                "id": "ATH-002",
+                "title": "Middle School Transportation Forms",
+                "description": "Activities/Athletics page provides middle-school transportation guidelines and an all-transportation form.",
+                "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+                "keywords": "middle school, athletics, transportation, bus, form, guidelines",
+                "staff_intent": "Find middle-school activity/athletic transportation paperwork.",
+                "source": "uploaded_resource_dataset"
+              },
+              {
+                "id": "ATH-003",
+                "title": "High School Transportation Forms",
+                "description": "Activities/Athletics page provides high-school transportation guidelines and an all-transportation form.",
+                "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+                "keywords": "high school, athletics, transportation, bus, form, guidelines",
+                "staff_intent": "Find high-school activity/athletic transportation paperwork.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Routes and schedules",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Field trip transportation",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Food & Nutrition",
+        "topics": [
+          {
+            "label": "Food services",
+            "resources": [
+              {
+                "id": "FOOD-001",
+                "title": "Food Services",
+                "description": "Food Services page provides menus, My School Bucks, and free/reduced meal application information.",
+                "url": "https://www.mpsomaha.org/departments/food-services",
+                "keywords": "food, lunch, menu, meals, My School Bucks, free reduced",
+                "staff_intent": "Find meal, menu, or food-service resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Menus",
+            "resources": [
+              {
+                "id": "FOOD-001",
+                "title": "Food Services",
+                "description": "Food Services page provides menus, My School Bucks, and free/reduced meal application information.",
+                "url": "https://www.mpsomaha.org/departments/food-services",
+                "keywords": "food, lunch, menu, meals, My School Bucks, free reduced",
+                "staff_intent": "Find meal, menu, or food-service resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Meal payments",
+            "resources": [
+              {
+                "id": "FOOD-001",
+                "title": "Food Services",
+                "description": "Food Services page provides menus, My School Bucks, and free/reduced meal application information.",
+                "url": "https://www.mpsomaha.org/departments/food-services",
+                "keywords": "food, lunch, menu, meals, My School Bucks, free reduced",
+                "staff_intent": "Find meal, menu, or food-service resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Free/reduced meals",
+            "resources": [
+              {
+                "id": "FOOD-002",
+                "title": "Free & Reduced Meal Applications",
+                "description": "Food Services page provides free/reduced meal application information and multilingual application links.",
+                "url": "https://www.mpsomaha.org/departments/food-services",
+                "keywords": "free lunch, reduced lunch, meal application, food assistance",
+                "staff_intent": "Locate free/reduced meal application information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Food safety",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Finance & Purchasing",
+        "topics": [
+          {
+            "label": "Purchasing",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Reimbursements",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "eFinance",
+            "resources": [
+              {
+                "id": "FIN-001",
+                "title": "eFinance",
+                "description": "Staff Links provides eFinance access for district finance functions.",
+                "url": "https://www.mpsomaha.org/staff-links",
+                "keywords": "efinance, finance, employee finance, pentamation",
+                "staff_intent": "Open the district eFinance system.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Budget information",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Vendor resources",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Policies, Forms & Compliance",
+    "children": [
+      {
+        "label": "Policies",
+        "topics": [
+          {
+            "label": "Board policies",
+            "resources": [
+              {
+                "id": "POL-001",
+                "title": "Board Policies",
+                "description": "Official website collection of Board policies organized into major series including HR, Student Services, Curriculum, and Technology.",
+                "url": "https://www.mpsomaha.org/board/policies",
+                "keywords": "policy, policies, rules, board policy, procedure",
+                "staff_intent": "Locate a district policy or rule.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Personnel policies",
+            "resources": [
+              {
+                "id": "POL-001",
+                "title": "Board Policies",
+                "description": "Official website collection of Board policies organized into major series including HR, Student Services, Curriculum, and Technology.",
+                "url": "https://www.mpsomaha.org/board/policies",
+                "keywords": "policy, policies, rules, board policy, procedure",
+                "staff_intent": "Locate a district policy or rule.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Technology policies",
+            "resources": [
+              {
+                "id": "POL-002",
+                "title": "7000 Technology Policies",
+                "description": "Technology policy collection including acceptable use, account lifecycle, web/social media, cybersecurity, and records retention.",
+                "url": "https://www.mpsomaha.org/board/policies/7000-technology",
+                "keywords": "technology policy, acceptable use, cybersecurity, password, MFA, social media, records",
+                "staff_intent": "Find a technology-related district policy.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Student policies",
+            "resources": [
+              {
+                "id": "POL-001",
+                "title": "Board Policies",
+                "description": "Official website collection of Board policies organized into major series including HR, Student Services, Curriculum, and Technology.",
+                "url": "https://www.mpsomaha.org/board/policies",
+                "keywords": "policy, policies, rules, board policy, procedure",
+                "staff_intent": "Locate a district policy or rule.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Records retention",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Forms & Documents",
+        "topics": [
+          {
+            "label": "Resource Browser",
+            "resources": [
+              {
+                "id": "GEN-001",
+                "title": "MPS Resource Browser",
+                "description": "Searchable MPS resource finder for items such as handbooks and activities/athletic forms.",
+                "url": "https://www.mpsomaha.org/resource-browser",
+                "keywords": "resource, form, document, handbook, athletics, activities, find",
+                "staff_intent": "Find an official MPS resource or form.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Staff forms",
+            "resources": [
+              {
+                "id": "GEN-001",
+                "title": "MPS Resource Browser",
+                "description": "Searchable MPS resource finder for items such as handbooks and activities/athletic forms.",
+                "url": "https://www.mpsomaha.org/resource-browser",
+                "keywords": "resource, form, document, handbook, athletics, activities, find",
+                "staff_intent": "Find an official MPS resource or form.",
+                "source": "uploaded_resource_dataset"
+              },
+              {
+                "id": "HR-002",
+                "title": "HR Resource Browser",
+                "description": "Searchable Human Resources library with benefits, compensation, documents, web portals, and links; supports keyword/category/employee-type filtering.",
+                "url": "https://www.mpsomaha.org/human-resources/resource-browser",
+                "keywords": "HR, human resources, benefits, compensation, retirement, forms, employee type",
+                "staff_intent": "Search HR documents and employee resources.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Student forms",
+            "resources": [
+              {
+                "id": "GEN-001",
+                "title": "MPS Resource Browser",
+                "description": "Searchable MPS resource finder for items such as handbooks and activities/athletic forms.",
+                "url": "https://www.mpsomaha.org/resource-browser",
+                "keywords": "resource, form, document, handbook, athletics, activities, find",
+                "staff_intent": "Find an official MPS resource or form.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Handbooks",
+            "resources": [
+              {
+                "id": "GEN-001",
+                "title": "MPS Resource Browser",
+                "description": "Searchable MPS resource finder for items such as handbooks and activities/athletic forms.",
+                "url": "https://www.mpsomaha.org/resource-browser",
+                "keywords": "resource, form, document, handbook, athletics, activities, find",
+                "staff_intent": "Find an official MPS resource or form.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Permissions and consent",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "Compliance",
+        "topics": [
+          {
+            "label": "Privacy and confidentiality",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Public records",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Accessibility",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Safety requirements",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Calendars & Communications",
+    "children": [
+      {
+        "label": "Schedules",
+        "topics": [
+          {
+            "label": "District calendar",
+            "resources": [
+              {
+                "id": "CAL-001",
+                "title": "District Calendars & Hours",
+                "description": "MPS homepage provides school hours and links to current and future district calendars.",
+                "url": "https://www.mpsomaha.org/",
+                "keywords": "calendar, school hours, dates, school year, schedule",
+                "staff_intent": "Find district calendar or school-hour information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Administrative calendar",
+            "resources": [
+              {
+                "id": "CAL-002",
+                "title": "Administrative Calendar 2026-2027",
+                "description": "Administrative calendar page provides the 2026-2027 administrative calendar.",
+                "url": "https://www.mpsomaha.org/administrative-calendar-4",
+                "keywords": "administrative calendar, admin calendar, schedule",
+                "staff_intent": "Find the administrative calendar.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "School hours",
+            "resources": [
+              {
+                "id": "CAL-001",
+                "title": "District Calendars & Hours",
+                "description": "MPS homepage provides school hours and links to current and future district calendars.",
+                "url": "https://www.mpsomaha.org/",
+                "keywords": "calendar, school hours, dates, school year, schedule",
+                "staff_intent": "Find district calendar or school-hour information.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Professional development calendar",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Assessment calendar",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "People & Updates",
+        "topics": [
+          {
+            "label": "School directory",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Department contacts",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "District communications",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Announcements",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Emergency notifications",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Schools & Departments",
+    "children": [
+      {
+        "label": "Schools",
+        "topics": [
+          {
+            "label": "Elementary schools",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Middle schools",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "High schools",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "School-specific forms",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "School contacts",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      },
+      {
+        "label": "District Departments",
+        "topics": [
+          {
+            "label": "Human Resources department",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Technology department",
+            "resources": [
+              {
+                "id": "TECH-002",
+                "title": "Technology Department",
+                "description": "Technology department page with technology contacts and access to MPS Tech Resources.",
+                "url": "https://www.mpsomaha.org/departments/technology",
+                "keywords": "technology, tech resources, tutorials, digital applications, contacts",
+                "staff_intent": "Find district technology resources or contacts.",
+                "source": "uploaded_resource_dataset"
+              }
+            ],
+            "coverage": "linked"
+          },
+          {
+            "label": "Curriculum department",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Student Services department",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Assessment department",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Activities department",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          },
+          {
+            "label": "Food Services department",
+            "resources": [],
+            "coverage": "needs_source_mapping"
+          }
+        ]
+      }
+    ]
+  }
+]
