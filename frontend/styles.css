@@ -101,11 +101,22 @@ button {
   transition: all 0.2s ease;
 }
 
+.secondary-action {
+  background: var(--brand-maroon);
+  border-color: var(--brand-maroon);
+  color: #ffffff;
+}
+
 .topbar-action:hover,
-.secondary-action:hover,
 .new-chat:hover {
   background: var(--brand-maroon-soft);
   border-color: rgba(138, 30, 65, 0.18);
+}
+
+.secondary-action:hover {
+  background: var(--brand-maroon-dark);
+  border-color: var(--brand-maroon-dark);
+  color: #ffffff;
 }
 
 .toolbar {
