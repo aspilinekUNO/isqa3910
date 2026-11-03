@@ -1,15 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const topicDropdown = document.querySelector('.topic-dropdown');
   const topicSummary = document.getElementById('topic-selected');
   const topicItems = document.querySelectorAll('.topic-dropdown .menu-item');
   const topicValue = () => document.querySelector('.topic-dropdown .menu-item.active')?.dataset.topic || 'Students';
   const schoolDropdown = document.querySelector('.school-dropdown');
   const schoolSummary = document.getElementById('school-selected');
-  const schoolItems = document.querySelectorAll('.school-dropdown .menu-item');
+  const schoolMenu = document.getElementById('school-menu');
   const questionForm = document.getElementById('question-form');
   const questionInput = document.querySelector('.composer input');
   const resetFiltersButton = document.getElementById('reset-filters');
+  const visitSchoolButton = document.getElementById('visit-school-site');
   const chatWindow = document.getElementById('chat-window');
+  const defaultSchoolName = 'Andersen Middle School';
+  let schoolOptions = [];
+
+  const getSchoolItems = () => document.querySelectorAll('.school-dropdown .menu-item');
 
   const createTimeStamp = () => {
     const now = new Date();
@@ -18,7 +23,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getSelectedSchool = () => {
     const activeItem = document.querySelector('.school-dropdown .menu-item.active');
-    return activeItem ? activeItem.dataset.school : 'Andersen Middle School';
+    return activeItem ? activeItem.dataset.school : defaultSchoolName;
+  };
+
+  const getSelectedSchoolUrl = () => {
+    const selectedSchool = getSelectedSchool();
+    const school = schoolOptions.find((option) => option.name === selectedSchool);
+    return school ? school.url : '';
+  };
+
+  const renderSchoolMenu = (schools) => {
+    if (!schoolMenu) {
+      return;
+    }
+
+    schoolMenu.innerHTML = '';
+
+    schools.forEach((school) => {
+      const menuItem = document.createElement('button');
+      menuItem.type = 'button';
+      menuItem.className = 'menu-item';
+      menuItem.dataset.school = school.name;
+      menuItem.dataset.url = school.url;
+      menuItem.textContent = school.name;
+
+      if (school.name === defaultSchoolName) {
+        menuItem.classList.add('active');
+      }
+
+      menuItem.addEventListener('click', () => {
+        getSchoolItems().forEach((item) => item.classList.toggle('active', item === menuItem));
+        syncSchoolSummary();
+        if (schoolDropdown) {
+          schoolDropdown.removeAttribute('open');
+        }
+      });
+
+      schoolMenu.appendChild(menuItem);
+    });
+  };
+
+  const loadSchoolOptions = async () => {
+    try {
+      const response = await fetch('/api/schools');
+      if (!response.ok) {
+        throw new Error(`School list request failed with status ${response.status}`);
+      }
+      schoolOptions = await response.json();
+    } catch (error) {
+      console.error('Unable to load school list from CSV:', error);
+      schoolOptions = [];
+    }
+
+    if (!schoolOptions.length) {
+      schoolOptions = [{ name: defaultSchoolName, url: 'https://www.mpsomaha.org/' }];
+    }
+
+    renderSchoolMenu(schoolOptions);
+    syncSchoolSummary();
   };
 
   const buildAssistantReply = (question) => {
@@ -310,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (schoolSummary) {
       schoolSummary.textContent = selectedSchool;
     }
-    schoolItems.forEach((item) => item.classList.toggle('active', item.dataset.school === selectedSchool));
+    getSchoolItems().forEach((item) => item.classList.toggle('active', item.dataset.school === selectedSchool));
   };
 
   topicItems.forEach((item) => {
@@ -323,23 +385,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  schoolItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      schoolItems.forEach((menuItem) => menuItem.classList.toggle('active', menuItem === item));
-      syncSchoolSummary();
-      if (schoolDropdown) {
-        schoolDropdown.removeAttribute('open');
-      }
-    });
-  });
-
   if (resetFiltersButton) {
     resetFiltersButton.addEventListener('click', () => {
       const defaultTopic = 'Students';
-      const defaultSchool = 'Andersen Middle School';
 
       topicItems.forEach((item) => item.classList.toggle('active', item.dataset.topic === defaultTopic));
-      schoolItems.forEach((item) => item.classList.toggle('active', item.dataset.school === defaultSchool));
+      getSchoolItems().forEach((item) => item.classList.toggle('active', item.dataset.school === defaultSchoolName));
       syncTopicSummary();
       syncSchoolSummary();
       if (topicDropdown) {
@@ -351,8 +402,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  if (visitSchoolButton) {
+    visitSchoolButton.addEventListener('click', () => {
+      const schoolUrl = getSelectedSchoolUrl();
+      if (schoolUrl) {
+        window.open(schoolUrl, '_blank', 'noopener,noreferrer');
+      }
+    });
+  }
+
   syncTopicSummary();
-  syncSchoolSummary();
+  await loadSchoolOptions();
 
   if (questionForm && questionInput) {
     questionForm.addEventListener('submit', (event) => {

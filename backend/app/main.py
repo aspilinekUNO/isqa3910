@@ -1,3 +1,4 @@
+import csv
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -27,6 +28,31 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/api/schools")
+def get_schools() -> list[dict[str, str]]:
+    schools_csv = BASE_DIR / "data" / "schools.csv"
+    schools: list[dict[str, str]] = []
+
+    with schools_csv.open("r", encoding="utf-8", newline="") as csv_file:
+        reader = csv.reader(csv_file)
+        for row in reader:
+            if not row:
+                continue
+
+            name, url = row[0], row[1] if len(row) > 1 else ""
+            name = name.strip()
+            url = url.strip()
+
+            if not name or not url:
+                continue
+            if "school name" in name.lower() and "website" in url.lower():
+                continue
+
+            schools.append({"name": name, "url": url})
+
+    return schools
+
 
 @app.post("/api/search")
 def search_mps(request: SearchRequest):
