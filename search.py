@@ -299,6 +299,20 @@ def check_query_safety(query):
         "children"
     ]
 
+    disclosure_terms = [
+        "give me",
+        "show me",
+        "tell me",
+        "what is",
+        "what are",
+        "find me",
+        "list",
+        "display",
+        "reveal",
+        "get me",
+        "provide"
+    ]
+
     mentions_private_info = any(
         term in query
         for term in private_info_terms
@@ -309,7 +323,12 @@ def check_query_safety(query):
         for term in student_terms
     )
 
-    if mentions_private_info and mentions_student:
+    requests_disclosure = any(
+        term in query
+        for term in disclosure_terms
+    )
+
+    if mentions_private_info and mentions_student and requests_disclosure:
         return False, "student_private_information"
 
     return True, None

@@ -30,6 +30,9 @@ def run_tests():
     unsafe_total = 0
     unsafe_passed = 0
 
+    safe_sensitive_total = 0
+    safe_sensitive_passed = 0
+
     print("=" * 70)
     print("MPS SEARCH TESTS")
     print("=" * 70)
@@ -77,6 +80,9 @@ def run_tests():
                 and actual == expected
             )
 
+        elif test_type == "safe_sensitive":
+            test_passed = not blocked
+
         else:
             test_passed = False
 
@@ -111,6 +117,12 @@ def run_tests():
 
             if test_passed:
                 unsafe_passed += 1
+
+        elif test_type == "safe_sensitive":
+            safe_sensitive_total += 1
+
+            if test_passed:
+                safe_sensitive_passed += 1
 
         print()
         print(f"[{status}] {query}")
@@ -147,6 +159,12 @@ def run_tests():
         print(
             f"Unsafe:     "
             f"{unsafe_passed}/{unsafe_total} passed"
+        )
+
+    if safe_sensitive_total:
+        print(
+            f"Safe/Sensitive: "
+            f"{safe_sensitive_passed}/{safe_sensitive_total} passed"
         )
 
     print(f"Failed:     {failed}")
