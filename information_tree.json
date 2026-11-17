@@ -1,0 +1,1087 @@
+{
+  "schema_version": "2.0",
+  "categories": [
+    {
+      "label": "Staff & Employee Services",
+      "children": [
+        {
+          "label": "Staff Portals & Accounts",
+          "topics": [
+            {
+              "label": "Staff Links",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-001",
+                "MPS-DIRECT-002",
+                "MPS-DIRECT-004",
+                "MPS-DIRECT-005",
+                "MPS-DIRECT-006",
+                "MPS-DIRECT-007",
+                "MPS-DIRECT-008",
+                "MPS-DIRECT-009",
+                "MPS-DIRECT-010",
+                "MPS-DIRECT-011",
+                "MPS-DIRECT-012",
+                "MPS-DIRECT-013",
+                "MPS-DIRECT-015",
+                "MPS-DIRECT-016"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Employee Access Center",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Employee self-service",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-ADD-020",
+                "MPS-DIRECT-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Single sign-on and ClassLink",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Account/password assistance",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Employee directories",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Human Resources",
+          "topics": [
+            {
+              "label": "Benefits and insurance",
+              "resource_ids": [
+                "HR-001",
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Benefits enrollment",
+              "resource_ids": [
+                "HR-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Payroll and pay statements",
+              "resource_ids": [
+                "MPS-ADD-020",
+                "MPS-DIRECT-017"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Leave and absences",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-ADD-020",
+                "MPS-DIRECT-024"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Employment verification",
+              "resource_ids": [
+                "MPS-ADD-020"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Hiring and onboarding",
+              "resource_ids": [
+                "MPS-ADD-020",
+                "MPS-ADD-065"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Contracts and bargaining",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Retirement",
+              "resource_ids": [
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "HR forms and documents",
+              "resource_ids": [
+                "HR-002",
+                "MPS-ADD-020",
+                "MPS-ADD-065",
+                "MPS-DIRECT-020",
+                "MPS-DIRECT-021",
+                "MPS-DIRECT-024"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "HR contacts",
+              "resource_ids": [
+                "HR-002"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        },
+        {
+          "label": "Professional Learning",
+          "topics": [
+            {
+              "label": "Staff development",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-ADD-020",
+                "MPS-DIRECT-013",
+                "MPS-DIRECT-018",
+                "MPS-DIRECT-019"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Training calendar",
+              "resource_ids": [
+                "MPS-DIRECT-013"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Required training",
+              "resource_ids": [
+                "MPS-ADD-029"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Licensure and certification",
+              "resource_ids": [
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Staff evaluation",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Teaching & Learning",
+      "children": [
+        {
+          "label": "Curriculum & Instruction",
+          "topics": [
+            {
+              "label": "Elementary curriculum",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-008"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Middle school curriculum",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "High school curriculum",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Math resources",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-008"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Science resources",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-015"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Language arts",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Social studies",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-015"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "World languages",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-015"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Fine arts",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Instructional materials",
+              "resource_ids": [
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Digital textbooks",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-015"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        },
+        {
+          "label": "Assessment & Data",
+          "topics": [
+            {
+              "label": "District assessments",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-010",
+                "MPS-DIRECT-016"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "State assessments",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Testing calendars",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Assessment resources",
+              "resource_ids": [
+                "MPS-DIRECT-009",
+                "MPS-DIRECT-010",
+                "MPS-DIRECT-016"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Data reporting",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-009"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Research requests",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Classroom Resources",
+          "topics": [
+            {
+              "label": "Lesson planning",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Learning platforms",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Library services",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-ADD-062"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Instructional technology",
+              "resource_ids": [
+                "TECH-002",
+                "STAFF-001",
+                "MPS-DIRECT-012"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Specialized programs",
+              "resource_ids": [
+                "MPS-DIRECT-022"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Technology & Digital Services",
+      "children": [
+        {
+          "label": "Help & Support",
+          "topics": [
+            {
+              "label": "Technology Help Desk",
+              "resource_ids": [
+                "TECH-002",
+                "MPS-DIRECT-005"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Submit a support ticket",
+              "resource_ids": [
+                "TECH-002",
+                "MPS-DIRECT-005"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Device troubleshooting",
+              "resource_ids": [
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Account access",
+              "resource_ids": [
+                "MPS-DIRECT-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Network and Wi-Fi",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Printing and copiers",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Systems & Security",
+          "topics": [
+            {
+              "label": "Staff systems",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-004",
+                "MPS-DIRECT-006",
+                "MPS-DIRECT-007",
+                "MPS-DIRECT-011"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Google Workspace",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Microsoft 365",
+              "resource_ids": [
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "ClassLink",
+              "resource_ids": [
+                "MPS-DIRECT-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Technology policies",
+              "resource_ids": [
+                "POL-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Cybersecurity guidance",
+              "resource_ids": [
+                "POL-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Data privacy",
+              "resource_ids": [
+                "MPS-DIRECT-012"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Students & Student Services",
+      "children": [
+        {
+          "label": "Enrollment & Records",
+          "topics": [
+            {
+              "label": "New student enrollment",
+              "resource_ids": [
+                "STU-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Annual updates",
+              "resource_ids": [
+                "STU-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "School transfers",
+              "resource_ids": [
+                "STU-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "School assignment",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Student records",
+              "resource_ids": [
+                "STU-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Student information systems",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-006"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        },
+        {
+          "label": "Attendance & Conduct",
+          "topics": [
+            {
+              "label": "Attendance reporting",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-007"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Attendance procedures",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Student conduct",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Discipline policies",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Student Support",
+          "topics": [
+            {
+              "label": "Special education",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "504 accommodations",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "English learners",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Counseling",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Mental health",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Student health",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Immunizations",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Safety and incident reporting",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Activities & Athletics",
+      "children": [
+        {
+          "label": "Sports & Participation",
+          "topics": [
+            {
+              "label": "Athletic enrollment",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Pre-participation clearance",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Sports physical forms",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Eligibility",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Team schedules",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Activity forms",
+              "resource_ids": [
+                "GEN-001",
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        },
+        {
+          "label": "Activity Operations",
+          "topics": [
+            {
+              "label": "Activity transportation",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Facility use",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Field trips",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Fine arts activities",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Clubs and organizations",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "School Operations",
+      "children": [
+        {
+          "label": "Buildings & Facilities",
+          "topics": [
+            {
+              "label": "Maintenance requests",
+              "resource_ids": [
+                "MPS-ADD-067"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Custodial resources",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Facility reservations",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Building safety",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Emergency procedures",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Transportation",
+          "topics": [
+            {
+              "label": "Bus services",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Transportation forms",
+              "resource_ids": [
+                "ATH-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Routes and schedules",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Field trip transportation",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Food & Nutrition",
+          "topics": [
+            {
+              "label": "Food services",
+              "resource_ids": [
+                "FOOD-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Menus",
+              "resource_ids": [
+                "FOOD-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Meal payments",
+              "resource_ids": [
+                "FOOD-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Free/reduced meals",
+              "resource_ids": [
+                "FOOD-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Food safety",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Finance & Purchasing",
+          "topics": [
+            {
+              "label": "Purchasing",
+              "resource_ids": [
+                "MPS-DIRECT-011"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Reimbursements",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "eFinance",
+              "resource_ids": [
+                "STAFF-001",
+                "MPS-DIRECT-004"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Budget information",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Vendor resources",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Policies, Forms & Compliance",
+      "children": [
+        {
+          "label": "Policies",
+          "topics": [
+            {
+              "label": "Board policies",
+              "resource_ids": [
+                "POL-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Personnel policies",
+              "resource_ids": [
+                "POL-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Technology policies",
+              "resource_ids": [
+                "POL-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Student policies",
+              "resource_ids": [
+                "POL-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Records retention",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "Forms & Documents",
+          "topics": [
+            {
+              "label": "Resource Browser",
+              "resource_ids": [
+                "GEN-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Staff forms",
+              "resource_ids": [
+                "GEN-001",
+                "HR-002",
+                "MPS-DIRECT-017",
+                "MPS-DIRECT-018",
+                "MPS-DIRECT-019",
+                "MPS-DIRECT-020",
+                "MPS-DIRECT-021",
+                "MPS-DIRECT-022"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Student forms",
+              "resource_ids": [
+                "GEN-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Handbooks",
+              "resource_ids": [
+                "GEN-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Permissions and consent",
+              "resource_ids": [
+                "MPS-DIRECT-012"
+              ],
+              "coverage": "mapped"
+            }
+          ]
+        },
+        {
+          "label": "Compliance",
+          "topics": [
+            {
+              "label": "Privacy and confidentiality",
+              "resource_ids": [
+                "MPS-DIRECT-012"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Public records",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Accessibility",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Safety requirements",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Calendars & Communications",
+      "children": [
+        {
+          "label": "Schedules",
+          "topics": [
+            {
+              "label": "District calendar",
+              "resource_ids": [
+                "CAL-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Administrative calendar",
+              "resource_ids": [
+                "CAL-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "School hours",
+              "resource_ids": [
+                "CAL-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Professional development calendar",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Assessment calendar",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "People & Updates",
+          "topics": [
+            {
+              "label": "School directory",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Department contacts",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "District communications",
+              "resource_ids": [
+                "STAFF-001"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Announcements",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Emergency notifications",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Schools & Departments",
+      "children": [
+        {
+          "label": "Schools",
+          "topics": [
+            {
+              "label": "Elementary schools",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Middle schools",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "High schools",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "School-specific forms",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "School contacts",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        },
+        {
+          "label": "District Departments",
+          "topics": [
+            {
+              "label": "Human Resources department",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Technology department",
+              "resource_ids": [
+                "TECH-002"
+              ],
+              "coverage": "mapped"
+            },
+            {
+              "label": "Curriculum department",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Student Services department",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Assessment department",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Activities department",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            },
+            {
+              "label": "Food Services department",
+              "resource_ids": [],
+              "coverage": "needs_source_mapping"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
