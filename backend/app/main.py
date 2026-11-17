@@ -11,6 +11,7 @@ from search import search_resources
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
+PROJECT_ROOT = BASE_DIR.parent
 
 app = FastAPI(
     title="Project Backend",
@@ -31,7 +32,7 @@ app.add_middleware(
 
 @app.get("/api/schools")
 def get_schools() -> list[dict[str, str]]:
-    schools_csv = BASE_DIR / "data" / "schools.csv"
+    schools_csv = PROJECT_ROOT / "data" / "schools.csv"
     schools: list[dict[str, str]] = []
 
     with schools_csv.open("r", encoding="utf-8", newline="") as csv_file:
