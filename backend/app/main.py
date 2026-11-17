@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from pydantic import BaseModel
-from search import search_resources
+from search import search_resources, check_query_safety
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
@@ -57,6 +57,15 @@ def get_schools() -> list[dict[str, str]]:
 
 @app.post("/api/search")
 def search_mps(request: SearchRequest):
+    allowed, reason = check_query_safety(request.query)
+    if not allowed:
+        return {
+            "query": request.query,
+            "blocked": True,
+            "reason": reason,
+            "results": []
+        }
+    
     results = search_resources(
         request.query,
         number_of_results=3
@@ -64,6 +73,7 @@ def search_mps(request: SearchRequest):
 
     return {
         "query": request.query,
+        "blocked": False,
         "results": results
     }
 

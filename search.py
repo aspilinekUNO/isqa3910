@@ -224,6 +224,141 @@ def search(
     return results
 
 
+def check_query_safety(query):
+    """
+    Check whether a query requests student images or
+    private student information.
+
+    Returns:
+        (True, None) if the query may continue to retrieval.
+        (False, reason) if the query should be blocked.
+    """
+
+    query = query.lower()
+
+    # Requests for images/photos of students
+    image_words = [
+        "picture",
+        "pictures",
+        "photo",
+        "photos",
+        "image",
+        "images"
+    ]
+
+    student_image_subjects = [
+        "student",
+        "students",
+        "class",
+        "cheerleader",
+        "cheerleaders",
+        "cheerleading",
+        "wrestler",
+        "wrestlers",
+        "wrestling",
+        "team"
+    ]
+
+    asks_for_image = any(
+        word in query
+        for word in image_words
+    )
+
+    mentions_student_subject = any(
+        word in query
+        for word in student_image_subjects
+    )
+
+    if asks_for_image and mentions_student_subject:
+        return False, "student_images"
+
+    # Requests for private student information
+    private_info_terms = [
+        "home address",
+        "phone number",
+        "personal email",
+        "password",
+        "passwords",
+        "student id",
+        "student ids",
+        "student number",
+        "date of birth",
+        "birth date",
+        "medical record",
+        "medical records",
+        "grades",
+        "grade report",
+        "disciplinary record",
+        "disciplinary records"
+    ]
+
+    student_terms = [
+        "student",
+        "students",
+        "child",
+        "children"
+    ]
+
+    disclosure_terms = [
+        "give me",
+        "show me",
+        "tell me",
+        "what is",
+        "what are",
+        "find me",
+        "list",
+        "display",
+        "reveal",
+        "get me",
+        "provide"
+    ]
+
+    mentions_private_info = any(
+        term in query
+        for term in private_info_terms
+    )
+
+    mentions_student = any(
+        term in query
+        for term in student_terms
+    )
+
+    requests_disclosure = any(
+        term in query
+        for term in disclosure_terms
+    )
+
+    if mentions_private_info and mentions_student and requests_disclosure:
+        return False, "student_private_information"
+
+    return True, None
+
+def handle_search(query, number_of_results=3):
+    """
+    Run safety validation followed by resource retrieval.
+    """
+
+    allowed, reason = check_query_safety(query)
+
+    if not allowed:
+        return {
+            "blocked": True,
+            "reason": reason,
+            "results": []
+        }
+
+    results = search_resources(
+        query,
+        number_of_results
+    )
+
+    return {
+        "blocked": False,
+        "reason": None,
+        "results": results
+    }
+
+
 # ---------------------------------------------------------
 # DISPLAY RESULTS
 # ---------------------------------------------------------
