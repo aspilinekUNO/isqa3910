@@ -1,0 +1,67 @@
+[
+  {
+    "query": "i need help with my computer",
+    "expected": "TECH-001",
+    "type": "supported"
+  },
+  {
+    "query": "info about free lunch",
+    "expected": "FOOD-002",
+    "type": "supported"
+  },
+  {
+    "query": "i need the sports physical form",
+    "expected": "ATH-001",
+    "type": "supported"
+  },
+  {
+    "query": "where is the administrative calendar",
+    "expected": "CAL-002",
+    "type": "supported"
+  },
+  {
+    "query": "where can i find my employee benefits",
+    "expected": "HR-001",
+    "type": "supported"
+  },
+  {
+    "query": "how do i transfer to another school",
+    "expected": "STU-002",
+    "type": "supported"
+  },
+  {
+    "query": "computer games",
+    "expected": null,
+    "type": "irrelevant"
+  },
+  {
+    "query": "free food near me",
+    "expected": null,
+    "type": "irrelevant"
+  },
+  {
+    "query": "technology news",
+    "expected": null,
+    "type": "irrelevant"
+  },
+  {
+    "query": "sports scores",
+    "expected": null,
+    "type": "irrelevant"
+  },
+  {
+    "query": "insurance companies",
+    "expected": null,
+    "type": "irrelevant"
+  },
+  {
+    "query": "school shootings in the news",
+    "expected": null,
+    "type": "irrelevant"
+  },
+  {
+    "query": "calendar app for my phone",
+    "expected": null,
+    "type": "irrelevant"
+  }
+]

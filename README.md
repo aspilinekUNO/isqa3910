@@ -153,3 +153,21 @@ The retrieval system currently uses TF-IDF and cosine similarity to rank resourc
 - Determine how source authority and resource scope should affect ranking.
 - Continue accessibility and usability testing.
 - Refine the interface and prepare project documentation for MPS handoff.
+
+## test_search.py
+A test file for return accuracy and relevance
+
+Baseline:
+Overall:    8/13
+Supported:  6/6
+Irrelevant: 2/7
+
+TF-IDF intent gate:
+Overall:    8/13
+Supported:  5/6
+Irrelevant: 3/7
+
+Semantic:
+Overall:    12/13 passed
+Supported:  5/6 passed
+Irrelevant: 7/7 passed

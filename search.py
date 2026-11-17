@@ -4,6 +4,7 @@ from pathlib import Path
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
 
 from mps_data import load_resources
 
@@ -17,6 +18,10 @@ MANIFEST_FILE = DATASET_FOLDER / "manifest.csv"
 
 NUMBER_OF_RESULTS = 5
 
+MIN_RESOURCE_SCORE = 0.15
+MIN_INTENT_SCORE = 0.10
+MIN_SEMANTIC_SCORE = 0.40
+semantic_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # ---------------------------------------------------------
 # LOAD THE DATASET
@@ -273,6 +278,34 @@ def search_resources(query, number_of_results=3):
     """
 
     resources = load_resources()
+    '''
+    intent_texts = [
+        resource.get("staff_intent", "")
+        for resource in resources
+    ]
+    '''
+    semantic_texts = []
+
+    for resource in resources:
+        semantic_text = " ".join([
+            resource.get("resource_name", ""),
+            resource.get("description", ""),
+            resource.get("staff_intent", "")
+        ])
+
+        semantic_texts.append(semantic_text)
+
+    resource_embeddings = semantic_model.encode(
+        semantic_texts,
+        normalize_embeddings=True
+    )
+
+    query_embedding = semantic_model.encode(
+        query,
+        normalize_embeddings=True
+    )
+
+    semantic_scores = resource_embeddings @ query_embedding
 
     searchable_resources = []
 
@@ -298,19 +331,46 @@ def search_resources(query, number_of_results=3):
     resource_vectors = vectorizer.fit_transform(
         searchable_resources
     )
+    '''
+    intent_vectorizer = TfidfVectorizer(
+        stop_words="english"
+    )
 
+    intent_vectors = intent_vectorizer.fit_transform(
+        intent_texts
+    )
+    '''
     query_vector = vectorizer.transform([query])
+    #intent_query_vector = intent_vectorizer.transform([query])
 
     scores = cosine_similarity(
         query_vector,
         resource_vectors
     )[0]
-
+    '''
+    intent_scores = cosine_similarity(
+        intent_query_vector,
+        intent_vectors
+    )[0]
+    '''
     ranked_indexes = scores.argsort()[::-1]
 
     results = []
 
-    for index in ranked_indexes[:number_of_results]:
+    for index in ranked_indexes:
+
+        score = float(scores[index])
+        #intent_score = float(intent_scores[index])
+        semantic_score = float(semantic_scores[index])
+
+        # Do not return resources that are not relevant enough.
+        if score < MIN_RESOURCE_SCORE:
+            continue
+        # Do not return resources when query intent is not strong enough.
+        #if intent_score < MIN_INTENT_SCORE:
+        #    continue
+        if semantic_score < MIN_SEMANTIC_SCORE:
+            continue
 
         resource = resources[index]
 
@@ -323,8 +383,14 @@ def search_resources(query, number_of_results=3):
             "description": resource["description"],
             "staff_intent": resource["staff_intent"],
             "source_url": resource["source_url"],
-            "score": float(scores[index])
+            "score": score,
+            #"intent_score": intent_score,
+            "semantic_score": semantic_score
         })
+
+        # Return at most the requested number of relevant resources.
+        if len(results) >= number_of_results:
+            break
 
     return results
 
