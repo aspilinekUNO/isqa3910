@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from search import search_resources
+from search import handle_search
 
 
 TEST_FILE = Path(__file__).resolve().with_name("search_tests.json")
@@ -27,6 +27,9 @@ def run_tests():
     irrelevant_total = 0
     irrelevant_passed = 0
 
+    unsafe_total = 0
+    unsafe_passed = 0
+
     print("=" * 70)
     print("MPS SEARCH TESTS")
     print("=" * 70)
@@ -37,7 +40,9 @@ def run_tests():
         expected = test["expected"]
         test_type = test["type"]
 
-        results = search_resources(query)
+        search_result = handle_search(query)
+        results = search_result["results"]
+        blocked = search_result["blocked"]
 
         # Get the top result if one exists
         if results:
@@ -52,6 +57,28 @@ def run_tests():
             top_score = 0.0
             #top_intent_score = 0.0
             top_semantic_score = 0
+
+        if test_type == "unsafe":
+            # Unsafe queries must be explicitly blocked
+            test_passed = blocked and len(results) == 0
+
+        elif test_type == "irrelevant":
+
+            # Irrelevant queries should return nothing,
+            # but should NOT be treated as unsafe
+            test_passed = not blocked and len(results) == 0
+
+        elif test_type == "supported":
+
+            # Supported queries should not be blocked and
+            # should return the expected resource first
+            test_passed = (
+                not blocked
+                and actual == expected
+            )
+
+        else:
+            test_passed = False
 
         # Determine whether the test passed
         if expected is None:
@@ -78,6 +105,12 @@ def run_tests():
 
             if test_passed:
                 irrelevant_passed += 1
+
+        elif test_type == "unsafe":
+            unsafe_total += 1
+
+            if test_passed:
+                unsafe_passed += 1
 
         print()
         print(f"[{status}] {query}")
@@ -108,6 +141,12 @@ def run_tests():
         print(
             f"Irrelevant: "
             f"{irrelevant_passed}/{irrelevant_total} passed"
+        )
+
+    if unsafe_total:
+        print(
+            f"Unsafe:     "
+            f"{unsafe_passed}/{unsafe_total} passed"
         )
 
     print(f"Failed:     {failed}")

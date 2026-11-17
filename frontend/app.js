@@ -330,6 +330,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const data = await response.json();
 
+      if (data.blocked) {
+        renderMessage(
+          'assistant',
+          'I cannot provide student images or private student information.',
+          null
+        );
+        return;
+      }
+
       if (!data.results || data.results.length === 0) {
         renderMessage(
           'assistant',
