@@ -1,0 +1,648 @@
+{
+  "schema_version": "2.0",
+  "resources": [
+    {
+      "id": "STAFF-001",
+      "title": "Staff Links",
+      "description": "Alphabetical staff link hub containing employee systems, instructional resources, benefits links, and support links.",
+      "url": "https://www.mpsomaha.org/staff-links",
+      "keywords": [
+        "staff"
+      ],
+      "staff_intent": "Browse the MPS Staff Links directory to find employee applications and resources.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "MPS-DIRECT-001",
+      "title": "Employee Access Center",
+      "description": "Employee personal information and self-service.",
+      "url": "https://pay.mpsomaha.org/",
+      "keywords": [
+        "access",
+        "center",
+        "employee"
+      ],
+      "staff_intent": "Access employee personal information and self-service through Employee Access Center.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "district_website",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-002",
+      "title": "ClassLink LaunchPad",
+      "description": "Single sign-on to MPS digital applications.",
+      "url": "https://launchpad.classlink.com/millard",
+      "keywords": [
+        "classlink",
+        "launchpad"
+      ],
+      "staff_intent": "Sign in to MPS digital applications through ClassLink LaunchPad.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-004",
+      "title": "eFinance Login",
+      "description": "District eFinance application.",
+      "url": "https://efinance.esu3.org/",
+      "keywords": [
+        "efinance",
+        "login"
+      ],
+      "staff_intent": "Access the district eFinance application for authorized financial tasks.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-005",
+      "title": "Technology Helpdesk Ticket",
+      "description": "Staff technical support ticket system; access may require staff login.",
+      "url": "https://helpdesk.mpsomaha.org/",
+      "keywords": [
+        "helpdesk",
+        "technology",
+        "ticket"
+      ],
+      "staff_intent": "Submit a staff technology support request through the helpdesk.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "district_website",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-006",
+      "title": "Synergy Student Information System",
+      "description": "Staff login to student information and gradebook.",
+      "url": "https://ne-mps.edupoint.com/",
+      "keywords": [
+        "information",
+        "student",
+        "synergy",
+        "system"
+      ],
+      "staff_intent": "Access the Synergy student information system for authorized school work.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-007",
+      "title": "Synergy Daily Substitute Login",
+      "description": "Substitute teacher access.",
+      "url": "https://ne-mps.edupoint.com/LoginSub.aspx",
+      "keywords": [
+        "daily",
+        "login",
+        "substitute",
+        "synergy"
+      ],
+      "staff_intent": "Sign in to the Synergy daily substitute interface.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-008",
+      "title": "Elementary Math Resources",
+      "description": "Elementary math teacher resources.",
+      "url": "https://sites.google.com/mpsomaha.org/mpselementarymathresourcepage/home",
+      "keywords": [
+        "elementary",
+        "math"
+      ],
+      "staff_intent": "Find elementary mathematics curriculum and teaching resources.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-009",
+      "title": "DARE Assessment & Data Resources",
+      "description": "Staff assessment and data resources; sign-in may be required.",
+      "url": "https://sites.google.com/mpsomaha.org/dare-training/home",
+      "keywords": [
+        "assessment",
+        "dare",
+        "data"
+      ],
+      "staff_intent": "Find MPS assessment and data resources in the DARE training site.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-010",
+      "title": "MAP Growth Assessment Resources",
+      "description": "MAP Growth assessment resources; sign-in may be required.",
+      "url": "https://sites.google.com/mpsomaha.org/dare-training/assessment/map-growth",
+      "keywords": [
+        "assessment",
+        "growth",
+        "map"
+      ],
+      "staff_intent": "Find MAP Growth assessment guidance and resources.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-011",
+      "title": "MPS Technology Ordering",
+      "description": "District technology ordering resources; sign-in may be required.",
+      "url": "https://sites.google.com/mpsomaha.org/mps-technology-purchasing",
+      "keywords": [
+        "ordering",
+        "technology"
+      ],
+      "staff_intent": "Find the district technology purchasing and ordering resources.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-012",
+      "title": "Digital Resource Approval List",
+      "description": "Approved digital applications and related permissions.",
+      "url": "https://sites.google.com/mpsomaha.org/mps-digital-resource-list/home",
+      "keywords": [
+        "approval",
+        "digital",
+        "list"
+      ],
+      "staff_intent": "Check district digital resource approval information before using an application.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-013",
+      "title": "Better & Better Staff Development",
+      "description": "Staff development registration system.",
+      "url": "https://millard.truenorthlogic.com/",
+      "keywords": [
+        "better",
+        "development",
+        "staff"
+      ],
+      "staff_intent": "Access staff professional development registration and learning opportunities.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-015",
+      "title": "Holt McDougal Online",
+      "description": "Online curriculum materials for science, social studies, and world languages.",
+      "url": "https://my.hrw.com/",
+      "keywords": [
+        "holt",
+        "mcdougal",
+        "online"
+      ],
+      "staff_intent": "Access Holt McDougal online curriculum materials.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-016",
+      "title": "MPS Writing Assessment",
+      "description": "District writing assessment resource; may require sign-in.",
+      "url": "https://sites.google.com/mpsomaha.org/mpswriting/home",
+      "keywords": [
+        "assessment",
+        "writing"
+      ],
+      "staff_intent": "Find district writing assessment information and materials.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_application_or_site",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-ADD-020",
+      "title": "Human Resources Documents",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://www.mpsomaha.org/departments/human-resources/documents",
+      "keywords": [
+        "documents",
+        "human"
+      ],
+      "staff_intent": "Browse Human Resources documents and employee forms.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "HR-001",
+      "title": "Employee Benefits",
+      "description": "Employee benefits page linking to benefits resources, premiums, benefits guide, and related topics.",
+      "url": "https://www.mpsomaha.org/departments/human-resources/benefits",
+      "keywords": [
+        "benefits",
+        "employee"
+      ],
+      "staff_intent": "Review employee benefits and insurance information.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "MPS-DIRECT-017",
+      "title": "Employee Payroll Schedule 2026-27",
+      "description": "Current payroll schedule PDF.",
+      "url": "https://drive.google.com/file/d/1YKLzx05QbdQCtZj9agwHZ2FsZS0Fcv6r/view?usp=sharing",
+      "keywords": [
+        "2026",
+        "27",
+        "employee",
+        "payroll",
+        "schedule"
+      ],
+      "staff_intent": "View the 2026–27 employee payroll schedule.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_document",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-024",
+      "title": "HR Forms Filtered Resource Listing",
+      "description": "Filtered HR resource listing containing the FMLA return-to-work form; direct document link needs confirmation.",
+      "url": "https://www.mpsomaha.org/human-resources/resource-browser?combine=&field_documents_forms_type_target_id=65&field_form_employee_type_target_id=All&sort_bef_combine=title_ASC",
+      "keywords": [
+        "fmla",
+        "form",
+        "return",
+        "work"
+      ],
+      "staff_intent": "Browse filtered HR forms, including FMLA-related documents.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "district_website",
+      "link_type": "filtered_source_page",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-ADD-065",
+      "title": "Human Resources Department",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://www.mpsomaha.org/departments/human-resources",
+      "keywords": [
+        "department",
+        "human"
+      ],
+      "staff_intent": "Find the Human Resources department and its employee services.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "HR-002",
+      "title": "HR Resource Browser",
+      "description": "Searchable Human Resources library with benefits, compensation, documents, web portals, and links; supports keyword/category/employee-type filtering.",
+      "url": "https://www.mpsomaha.org/human-resources/resource-browser",
+      "keywords": [
+        "browser",
+        "hr"
+      ],
+      "staff_intent": "Search the HR resource browser for employee forms and documents.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "MPS-DIRECT-020",
+      "title": "Resignation Notification Incentive Form 2026-27",
+      "description": "RNI form PDF.",
+      "url": "https://drive.google.com/file/d/1eCK8OmKDjEhHspki0ZiwkqZFTvqqrrL0/view?usp=drive_link",
+      "keywords": [
+        "2026",
+        "27",
+        "form",
+        "incentive",
+        "notification",
+        "resignation"
+      ],
+      "staff_intent": "Find the 2026–27 resignation notification incentive form.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_document",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-021",
+      "title": "Employee Separation Notice Form",
+      "description": "Employee separation notice PDF.",
+      "url": "https://drive.google.com/file/d/1z1imPGYBYgwV9ClUeoROrWJq35yKZj9T/view?usp=sharing",
+      "keywords": [
+        "employee",
+        "form",
+        "notice",
+        "separation"
+      ],
+      "staff_intent": "Find the employee separation notice form.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_document",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-018",
+      "title": "Graduate Course Approval Instructions",
+      "description": "Graduate-level course approval instructions.",
+      "url": "https://docs.google.com/document/d/1bKGm3Yhrn9HEBUasmos3cwfxBXVt5jz5jhUTWW6ta-g/preview",
+      "keywords": [
+        "approval",
+        "course",
+        "graduate",
+        "instructions"
+      ],
+      "staff_intent": "Read instructions for approval of graduate-level coursework.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_document",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-DIRECT-019",
+      "title": "UNO Co-Teaching Scholarship Information 2026-27",
+      "description": "Scholarship information PDF.",
+      "url": "https://drive.google.com/file/d/1k9RJg3y7NFGw_0lEdx0UKiszGoLLLGkI/view?usp=drive_link",
+      "keywords": [
+        "2026",
+        "27",
+        "co",
+        "information",
+        "scholarship",
+        "teaching",
+        "uno"
+      ],
+      "staff_intent": "Read 2026–27 UNO co-teaching scholarship information.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_document",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "MPS-ADD-029",
+      "title": "Hourly Staff Professional Learning Resources",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://www.mpsomaha.org/departments/leadership-and-learning/hourly-staff-professional-learning-resources",
+      "keywords": [
+        "hourly",
+        "learning",
+        "professional",
+        "staff"
+      ],
+      "staff_intent": "Find professional learning resources for hourly staff.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "MPS-ADD-062",
+      "title": "Library Services",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://www.mpsomaha.org/departments/library-services",
+      "keywords": [
+        "library",
+        "services"
+      ],
+      "staff_intent": "Find library services and links to district library resources.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "TECH-002",
+      "title": "Technology Department",
+      "description": "Technology department page with technology contacts and access to MPS Tech Resources.",
+      "url": "https://www.mpsomaha.org/departments/technology",
+      "keywords": [
+        "department",
+        "technology"
+      ],
+      "staff_intent": "Find district technology resources and contacts.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "MPS-DIRECT-022",
+      "title": "Summer School Booklet 2026",
+      "description": "Summer school information booklet.",
+      "url": "https://drive.google.com/file/d/1oVZGwGUHtx4-UQLA1IrLCl1Eyo_O6mnV/view?usp=drive_link",
+      "keywords": [
+        "2026",
+        "booklet",
+        "school",
+        "summer"
+      ],
+      "staff_intent": "Read the 2026 summer school booklet.",
+      "source": "supplied_MPS_resource_mapping",
+      "source_type": "linked_external_document",
+      "link_type": "direct_destination",
+      "access_note": "Some systems require MPS staff authentication; access was not tested with credentials.",
+      "verification_note": "Direct URL was supplied in the prior MPS mapping; independently authenticated access and current destination were not rechecked."
+    },
+    {
+      "id": "POL-002",
+      "title": "7000 Technology Policies",
+      "description": "Technology policy collection including acceptable use, account lifecycle, web/social media, cybersecurity, and records retention.",
+      "url": "https://www.mpsomaha.org/board/policies/7000-technology",
+      "keywords": [
+        "7000",
+        "policies",
+        "technology"
+      ],
+      "staff_intent": "Read MPS technology policies including acceptable use and security.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "STU-001",
+      "title": "Enrollment Portal",
+      "description": "Enrollment portal includes required documents, new-family enrollment, annual updates, transfers, FAQs, and enrollment contact information.",
+      "url": "https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal",
+      "keywords": [
+        "enrollment",
+        "portal"
+      ],
+      "staff_intent": "Find student enrollment steps and requirements.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "ATH-001",
+      "title": "Activities, Athletics and Facility Use",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://www.mpsomaha.org/departments/activities-athletics-and-facility-use",
+      "keywords": [
+        "activities",
+        "athletics",
+        "facility",
+        "use"
+      ],
+      "staff_intent": "Find district athletics forms, activity resources and facility-use information.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "GEN-001",
+      "title": "MPS Resource Browser",
+      "description": "Searchable MPS resource finder for items such as handbooks and activities/athletic forms.",
+      "url": "https://www.mpsomaha.org/resource-browser",
+      "keywords": [
+        "browser"
+      ],
+      "staff_intent": "Search MPS forms, handbooks and documents in the resource browser.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "MPS-ADD-067",
+      "title": "KMS Staff Links",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://kms.mpsomaha.org/staff-links",
+      "keywords": [
+        "staff"
+      ],
+      "staff_intent": "Find staff resources from the KMS staff links page.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "FOOD-001",
+      "title": "Food Services",
+      "description": "Food Services page provides menus, My School Bucks, and free/reduced meal application information.",
+      "url": "https://www.mpsomaha.org/departments/food-services",
+      "keywords": [
+        "food",
+        "services"
+      ],
+      "staff_intent": "Find school menus, meal payments and food service information.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "POL-001",
+      "title": "Board Policies",
+      "description": "Official website collection of Board policies organized into major series including HR, Student Services, Curriculum, and Technology.",
+      "url": "https://www.mpsomaha.org/board/policies",
+      "keywords": [
+        "board",
+        "policies"
+      ],
+      "staff_intent": "Find official MPS Board policies.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "CAL-001",
+      "title": "MPS Home and Calendars",
+      "description": "Official MPS source page containing related resources; individual child destinations are not all mapped.",
+      "url": "https://www.mpsomaha.org/",
+      "keywords": [
+        "calendars",
+        "home"
+      ],
+      "staff_intent": "Find the district calendar and school hours.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    },
+    {
+      "id": "CAL-002",
+      "title": "Administrative Calendar 2026-2027",
+      "description": "Administrative calendar page provides the 2026-2027 administrative calendar.",
+      "url": "https://www.mpsomaha.org/administrative-calendar-4",
+      "keywords": [
+        "2026",
+        "2027",
+        "administrative",
+        "calendar"
+      ],
+      "staff_intent": "View the 2026–27 administrative calendar.",
+      "source": "uploaded_MPS_resource_dataset",
+      "source_type": "district_website",
+      "link_type": "source_page_or_hub",
+      "access_note": "This is a broader source page, not a verified direct link to every resource mentioned in its topic.",
+      "verification_note": "Source URL was supplied in the MPS resource dataset; any individual form named in a topic requires its own direct link."
+    }
+  ]
+}
