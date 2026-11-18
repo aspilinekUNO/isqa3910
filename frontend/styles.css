@@ -41,6 +41,10 @@ button {
   cursor: pointer;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 .app-shell {
   width: 100%;
   min-height: 100vh;
@@ -589,4 +593,45 @@ a {
 
 .resource-link:hover {
   text-decoration: underline;
+}
+
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.login-card {
+    width: min(420px, 100%);
+    padding: 32px;
+    border: 1px solid #d9dee7;
+    border-radius: 16px;
+    background: white;
+}
+
+.login-logo {
+    display: block;
+    max-width: 100px;
+    margin: 0 auto 20px;
+}
+
+.login-card h1 {
+    margin-bottom: 8px;
+}
+
+.login-card select,
+.login-card button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+}
+
+.development-notice {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+    font-size: 0.875rem;
 }

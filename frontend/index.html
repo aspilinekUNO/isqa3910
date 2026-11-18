@@ -7,119 +7,165 @@
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <header class="topbar">
-        <div class="brand">
-          <div class="logo-placeholder" aria-label="Logo placeholder">
-            <img src="/static/assets/logo.jpg" alt="Logo" class="logo-image" />
-          </div>
-          <div class="brand-text">Information Assistant</div>
+    <!-- Development login screen -->
+    <div id="login-screen" class="login-screen">
+      <div class="login-card">
+        <img
+          src="/static/assets/logo.jpg"
+          alt="Millard Public Schools"
+          class="login-logo"
+        />
+
+        <h1>Information Assistant</h1>
+
+        <p>Sign in to access MPS staff resources.</p>
+
+        <div class="development-notice">
+          Development Authentication
         </div>
-      </header>
 
-      <div class="toolbar" aria-label="Search controls">
-        <label class="control-group">
-          <span class="topic-label">Topic</span>
-          <details class="dropdown topic-dropdown" aria-label="Topic filter">
-            <summary id="topic-selected">Students</summary>
-            <div class="dropdown-menu" role="menu">
-              <button type="button" class="menu-item active" data-topic="Students">Students</button>
-              <button type="button" class="menu-item" data-topic="Academics">Academics</button>
-              <button type="button" class="menu-item" data-topic="Activities &amp; Athletics">Activities &amp; Athletics</button>
-              <button type="button" class="menu-item" data-topic="Attendance">Attendance</button>
-              <button type="button" class="menu-item" data-topic="Enrollment">Enrollment</button>
-              <button type="button" class="menu-item" data-topic="Health &amp; Wellness">Health &amp; Wellness</button>
-              <button type="button" class="menu-item" data-topic="Families">Families</button>
-              <button type="button" class="menu-item" data-topic="Staff">Staff</button>
-              <button type="button" class="menu-item" data-topic="Departments">Departments</button>
-              <button type="button" class="menu-item" data-topic="Policies &amp; Forms">Policies &amp; Forms</button>
-              <button type="button" class="menu-item" data-topic="District Information">District Information</button>
-            </div>
-          </details>
-        </label>
+        <label for="demo-user">Test account</label>
 
-        <details class="dropdown school-dropdown" aria-label="School filter">
-          <summary id="school-selected">Loading schools...</summary>
-          <div class="dropdown-menu" role="menu" id="school-menu"></div>
-        </details>
+        <select id="demo-user">
+          <option value="teacher">Demo Teacher</option>
+          <option value="secretary">Demo Secretary</option>
+          <option value="administrator">Demo Administrator</option>
+          <option value="district_staff">Demo District Staff</option>
+        </select>
 
-        <button type="button" class="secondary-action" id="visit-school-site">Visit school site</button>
-        <button type="button" class="secondary-action" id="reset-filters">Reset filters</button>
+        <button id="login-button" type="button">
+          Sign In
+        </button>
       </div>
-
-      <main class="workspace">
-        <aside class="sidebar">
-          <div class="sidebar-header">Information tree</div>
-
-          <div class="info-tree" aria-label="Popular information categories">
-            <div class="tree-group">
-              <div class="tree-label">Popular categories</div>
-              <ul class="tree-list">
-                <li>
-                  <span class="tree-section">Technology</span>
-                  <ul>
-                    <li><a href="https://helpdesk.mpsomaha.org/">Help desk</a></li>
-                    <li><a href="https://sites.google.com/mpsomaha.org/mps-digital-resource-list/home">Digital Resources</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <span class="tree-section">Student services</span>
-                  <ul>
-                    <li><a href="https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal">Enrollment</a></li>
-                    <li><a href="https://www.mpsomaha.org/departments/student-services/student-code-conduct-and-school-handbooks">Code of Conduct</a></li>
-                    <li><a href="https://www.mpsomaha.org/departments/student-services/student-supports">Student Supports</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <span class="tree-section">Activities &amp; athletics</span>
-                  <ul>
-                    <li><a href="https://www.mpsomaha.org/departments/activities-athletics-and-facility-use">Participation forms</a></li>
-                    <li><a href="https://www.mpsomaha.org/departments/transportation">Transportation</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div class="tree-group">
-              <div class="tree-label">Departments</div>
-              <ul class="tree-list">
-                <li>
-                  <span class="tree-section">Human resources</span>
-                  <ul>
-                    <li><a href="https://www.mpsomaha.org/departments/human-resources/benefits">Benefits</a></li>
-                    <li><a href="https://www.mpsomaha.org/departments/human-resources/documents">HR Documents</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <span class="tree-section">Leadership &amp; Learning</span>
-                  <ul>
-                    <li><a href="https://www.mpsomaha.org/departments/leadership-and-learning/required-training">Required Training</a></li>
-                    <li><a href="https://sites.google.com/mpsomaha.org/library-services">Library</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <span class="tree-section">Policies &amp; procedures</span>
-                  <ul>
-                    <li><a href="https://www.mpsomaha.org/board/policies">Board policies</a></li>
-                    <li><a href="https://www.mpsomaha.org/about/school-hours">School Hours</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </aside>
-
-        <section class="chat-panel" aria-label="Assistant chat">
-          <div id="chat-window" class="chat-window" aria-live="polite"></div>
-
-          <form class="composer" id="question-form">
-            <input type="text" placeholder="Ask a question..." aria-label="Ask a question" />
-            <button type="submit" aria-label="Send question">➤</button>
-          </form>
-        </section>
-      </main>
     </div>
 
+    <!-- Main application - hidden until authenticated -->
+    <div id="application" hidden>
+      <div class="app-shell">
+        <header class="topbar">
+          <div class="brand">
+            <div class="logo-placeholder" aria-label="Logo placeholder">
+              <img src="/static/assets/logo.jpg" alt="Logo" class="logo-image" />
+            </div>
+            <div class="brand-text">Information Assistant</div>
+          </div>
+
+          <div class="user-controls">
+            <span id="current-user"></span>
+
+            <button
+              type="button"
+              class="secondary-action"
+              id="logout-button"
+            >
+              Sign Out
+            </button>
+          </div>
+        </header>
+
+        <div class="toolbar" aria-label="Search controls">
+          <label class="control-group">
+            <span class="topic-label">Topic</span>
+            <details class="dropdown topic-dropdown" aria-label="Topic filter">
+              <summary id="topic-selected">Students</summary>
+              <div class="dropdown-menu" role="menu">
+                <button type="button" class="menu-item active" data-topic="Students">Students</button>
+                <button type="button" class="menu-item" data-topic="Academics">Academics</button>
+                <button type="button" class="menu-item" data-topic="Activities &amp; Athletics">Activities &amp; Athletics</button>
+                <button type="button" class="menu-item" data-topic="Attendance">Attendance</button>
+                <button type="button" class="menu-item" data-topic="Enrollment">Enrollment</button>
+                <button type="button" class="menu-item" data-topic="Health &amp; Wellness">Health &amp; Wellness</button>
+                <button type="button" class="menu-item" data-topic="Families">Families</button>
+                <button type="button" class="menu-item" data-topic="Staff">Staff</button>
+                <button type="button" class="menu-item" data-topic="Departments">Departments</button>
+                <button type="button" class="menu-item" data-topic="Policies &amp; Forms">Policies &amp; Forms</button>
+                <button type="button" class="menu-item" data-topic="District Information">District Information</button>
+              </div>
+            </details>
+          </label>
+
+          <details class="dropdown school-dropdown" aria-label="School filter">
+            <summary id="school-selected">Loading schools...</summary>
+            <div class="dropdown-menu" role="menu" id="school-menu"></div>
+          </details>
+
+          <button type="button" class="secondary-action" id="visit-school-site">Visit school site</button>
+          <button type="button" class="secondary-action" id="reset-filters">Reset filters</button>
+        </div>
+
+        <main class="workspace">
+          <aside class="sidebar">
+            <div class="sidebar-header">Information tree</div>
+
+            <div class="info-tree" aria-label="Popular information categories">
+              <div class="tree-group">
+                <div class="tree-label">Popular categories</div>
+                <ul class="tree-list">
+                  <li>
+                    <span class="tree-section">Technology</span>
+                    <ul>
+                      <li><a href="https://helpdesk.mpsomaha.org/">Help desk</a></li>
+                      <li><a href="https://sites.google.com/mpsomaha.org/mps-digital-resource-list/home">Digital Resources</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="tree-section">Student services</span>
+                    <ul>
+                      <li><a href="https://www.mpsomaha.org/departments/student-services/welcome-millard-enrollment-portal">Enrollment</a></li>
+                      <li><a href="https://www.mpsomaha.org/departments/student-services/student-code-conduct-and-school-handbooks">Code of Conduct</a></li>
+                      <li><a href="https://www.mpsomaha.org/departments/student-services/student-supports">Student Supports</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="tree-section">Activities &amp; athletics</span>
+                    <ul>
+                      <li><a href="https://www.mpsomaha.org/departments/activities-athletics-and-facility-use">Participation forms</a></li>
+                      <li><a href="https://www.mpsomaha.org/departments/transportation">Transportation</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tree-group">
+                <div class="tree-label">Departments</div>
+                <ul class="tree-list">
+                  <li>
+                    <span class="tree-section">Human resources</span>
+                    <ul>
+                      <li><a href="https://www.mpsomaha.org/departments/human-resources/benefits">Benefits</a></li>
+                      <li><a href="https://www.mpsomaha.org/departments/human-resources/documents">HR Documents</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="tree-section">Leadership &amp; Learning</span>
+                    <ul>
+                      <li><a href="https://www.mpsomaha.org/departments/leadership-and-learning/required-training">Required Training</a></li>
+                      <li><a href="https://sites.google.com/mpsomaha.org/library-services">Library</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="tree-section">Policies &amp; procedures</span>
+                    <ul>
+                      <li><a href="https://www.mpsomaha.org/board/policies">Board policies</a></li>
+                      <li><a href="https://www.mpsomaha.org/about/school-hours">School Hours</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+
+          <section class="chat-panel" aria-label="Assistant chat">
+            <div id="chat-window" class="chat-window" aria-live="polite"></div>
+
+            <form class="composer" id="question-form">
+              <input type="text" placeholder="Ask a question..." aria-label="Ask a question" />
+              <button type="submit" aria-label="Send question">➤</button>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
     <script src="/static/app.js"></script>
   </body>
 </html>
