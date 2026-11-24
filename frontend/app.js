@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const chatWindow = document.getElementById('chat-window');
   const defaultSchoolName = 'Andersen Middle School';
   let schoolOptions = [];
+  const loginScreen = document.getElementById('login-screen');
+  const application = document.getElementById('application');
+  const loginButton = document.getElementById('login-button');
+  const demoUserSelect = document.getElementById('demo-user');
 
   const getSchoolItems = () => document.querySelectorAll('.school-dropdown .menu-item');
 
@@ -383,6 +387,86 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     getSchoolItems().forEach((item) => item.classList.toggle('active', item.dataset.school === selectedSchool));
   };
+
+  const showApplication = (user) => {
+    loginScreen.hidden = true;
+    application.hidden = false;
+
+    console.log('Authenticated user:', user);
+  };
+
+
+  const showLogin = () => {
+    application.hidden = true;
+    loginScreen.hidden = false;
+  };
+
+  const checkAuthentication = async () => {
+    try {
+      const response = await fetch('/api/auth/me');
+
+      const data = await response.json();
+
+      if (data.authenticated) {
+        showApplication(data.user);
+      } else {
+        showLogin();
+      }
+
+    } catch (error) {
+      console.error('Authentication check failed:', error);
+      showLogin();
+    }
+  };
+
+  const login = async () => {
+    const userIdentifier = demoUserSelect.value;
+
+    try {
+      const response = await fetch('/api/auth/mock-login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user_identifier: userIdentifier
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+      const data = await response.json();
+
+      showApplication(data.user);
+
+    } catch (error) {
+      console.error(error);
+      alert('Unable to sign in.');
+    }
+  };
+
+  loginButton.addEventListener('click', login);
+
+  checkAuthentication();
+
+  const logoutButton = document.getElementById('logout-button');
+
+  const logout = async () => {
+    try {
+      await fetch('/api/auth/logout', {
+        method: 'POST'
+      });
+
+      showLogin();
+
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
+
+logoutButton.addEventListener('click', logout);
 
   topicItems.forEach((item) => {
     item.addEventListener('click', () => {
